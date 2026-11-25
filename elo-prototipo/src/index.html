@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#232428">
+  <meta name="description" content="Explore projetos de financiamento coletivo no Elo. Protótipo acadêmico com dados fictícios e pagamentos simulados.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Elo — Financiamento coletivo</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="revenue-chart.css">
+  <link rel="stylesheet" href="finance-report.css">
+  <link rel="stylesheet" href="interface.css">
+  <link rel="stylesheet" href="project-detail.css">
+  <link rel="stylesheet" href="project-forms.css">
+  <link rel="stylesheet" href="project-milestones.css">
+  <link rel="stylesheet" href="reward-deliveries.css">
+  <link rel="stylesheet" href="creator-search.css">
+  <link rel="stylesheet" href="admin-workspace.css">
+  <script src="theme.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div id="app"><div class="initial-load" role="status">Carregando projetos…</div></div>
+  <div id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div id="toasts" class="toast-stack"></div>
+  <dialog id="modal" aria-labelledby="modal-title"></dialog>
+  <noscript>Ative o JavaScript para explorar o protótipo. Todos os pagamentos e dados são fictícios.</noscript>
+</body>
+</html>

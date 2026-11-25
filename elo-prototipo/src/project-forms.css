@@ -1,0 +1,17 @@
+.draft-section{border-top:1px solid var(--border);padding-top:22px;margin-top:24px}
+.draft-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:18px}
+.draft-heading h3{font-size:1rem}
+.draft-heading p{font-size:.875rem;color:var(--muted);margin-top:6px;line-height:1.6}
+.draft-heading .btn{flex-shrink:0}
+.reward-draft,.profile-link-draft{border:1px solid var(--border);padding:18px;margin:16px 0;border-radius:6px;background:var(--surface-alt)}
+.reward-draft legend,.profile-link-draft legend,.milestone-draft legend{float:left;width:100%;padding:0;margin:0 0 18px;font-size:.875rem;font-weight:600}
+.reward-draft legend+*,.profile-link-draft legend+*,.milestone-draft legend+*{clear:both}
+.reward-draft,.profile-link-draft,.milestone-draft{min-width:0}
+.milestone-draft{border:1px solid var(--border);padding:18px;margin:16px 0;border-radius:6px;background:var(--surface-alt)}
+.milestone-draft .text-button{color:var(--danger)}
+.reward-draft .form-group:last-child,.profile-link-draft .form-group:last-child{margin-bottom:0}
+.reward-draft .text-button,.profile-link-draft .text-button{color:var(--danger)}
+.reward-draft-monthly{margin-top:27px}
+.creator-page-actions{display:flex;gap:10px;flex-wrap:wrap}
+.page-footer .demo-disclosure{color:var(--muted);font-size:.8125rem;min-height:44px;text-align:left;line-height:1.5}
+@media(max-width:600px){.draft-heading{flex-direction:column}.reward-draft,.profile-link-draft{padding:14px}.reward-draft-monthly{margin-top:0}.creator-page-actions{width:100%}.creator-page-actions .btn{flex:1}}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="453.54559055118114" height="270" preserveAspectRatio="xMinYMin meet" viewBox="0 0 453 270" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="453.54559055118114" height="270"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-270)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="116.46639879121557" y="253" style="font-family: Arial; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,506) scale(1,-1)">Participantes: criador, apoiador e administrador</text>
+			<rect x="151" y="43" width="301.54559055118114" height="190" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: none; fill-rule: evenodd; stroke-dasharray: 4, 3;"/>
+			<text x="159" y="220" style="font-family: Arial; font-size: 9.3px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,440) scale(1,-1)">Docker Compose no computador local</text>
+			<rect x="0" y="132" width="129" height="73" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="30.9466552734375" y="189" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,378) scale(1,-1)">Interface web</text>
+			<text x="41.2625732421875" y="175" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,350) scale(1,-1)">Navegador</text>
+			<text x="11.707275390625" y="163" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,326) scale(1,-1)">HTML, CSS e JavaScript</text>
+			<text x="35.9930419921875" y="151" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,302) scale(1,-1)">Cliente HTTP</text>
+			<rect x="165" y="132" width="128" height="73" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(91%,93%,95%); fill-rule: evenodd;"/>
+			<text x="194.572509765625" y="189" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,378) scale(1,-1)">Aplicação Elo</text>
+			<text x="203.9163818359375" y="175" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,350) scale(1,-1)">Serviço app</text>
+			<text x="206.2913818359375" y="163" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,326) scale(1,-1)">Node.js 22</text>
+			<text x="189.928466796875" y="151" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,302) scale(1,-1)">Arquivos src e /api</text>
+			<rect x="327" y="132" width="124" height="73" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(91%,93%,95%); fill-rule: evenodd;"/>
+			<text x="351.363037109375" y="189" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,378) scale(1,-1)">PostgreSQL 17</text>
+			<text x="366.55810546875" y="175" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,350) scale(1,-1)">Serviço db</text>
+			<text x="361.8011474609375" y="163" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,326) scale(1,-1)">Rede interna</text>
+			<text x="350.1859130859375" y="151" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,302) scale(1,-1)">Sem porta no host</text>
+			<rect x="327" y="57" width="124" height="47" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="340.5682373046875" y="88" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,176) scale(1,-1)">Volume persistente</text>
+			<text x="358.89501953125" y="74" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,148) scale(1,-1)">postgres_data</text>
+			<path d="M 129,167 L 165,167 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="165 167, 159.5973 169.6098, 159.5973 164.3902" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<polygon points="129 167, 134.4027 164.3902, 134.4027 169.6098" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<path d="M 293,167 L 327,167 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="327 167, 321.5973 169.6098, 321.5973 164.3902" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<polygon points="293 167, 298.4027 164.3902, 298.4027 169.6098" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<path d="M 389,132 L 389,104 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="389 104, 391.6098 109.4027, 386.3902 109.4027" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<polygon points="389 132, 386.3902 126.5973, 391.6098 126.5973" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<circle cx="147" cy="183" r="7" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="144.497314453125" y="180" style="font-family: Arial; font-size: 9px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,360) scale(1,-1)">1</text>
+			<circle cx="310" cy="183" r="7" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="307.497314453125" y="180" style="font-family: Arial; font-size: 9px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,360) scale(1,-1)">2</text>
+			<circle cx="403" cy="118" r="7" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="400.497314453125" y="115" style="font-family: Arial; font-size: 9px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,230) scale(1,-1)">3</text>
+			<text x="1" y="25" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,50) scale(1,-1)">1 HTTP na mesma origem   2 SQL pelo driver pg</text>
+			<text x="1" y="10" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,20) scale(1,-1)">3 Dados preservados entre recriações dos containers</text>
+		</g>
+	</g>
+</svg>

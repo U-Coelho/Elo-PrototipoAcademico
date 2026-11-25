@@ -1,0 +1,15 @@
+.reward-deliveries{margin-top:40px;padding-top:28px;border-top:1px solid var(--border)}
+.delivery-list{border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.delivery-row{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:20px;background:var(--surface)}
+.delivery-row+.delivery-row{border-top:1px solid var(--border)}
+.delivery-row h3{font-size:.95rem}.delivery-row p{font-size:.875rem;color:var(--muted);margin:6px 0;overflow-wrap:anywhere}
+.delivery-row .btn{flex-shrink:0}.delivery-status{font-size:.8125rem;color:var(--muted)}
+.support-delivery{border-top:1px solid var(--border);padding-top:14px;margin-top:16px;max-width:620px}
+.support-row:has(.support-delivery){align-items:flex-start}
+.support-delivery h4{font-size:.875rem}.support-delivery p{font-size:.875rem;line-height:1.65}
+.delivery-message{white-space:pre-wrap;overflow-wrap:anywhere}
+#reward-delivery-form>p{margin-bottom:20px}#reward-delivery-form input{min-width:0}
+.receipt-reference:has(>strong){display:flex;flex-direction:column;gap:6px}
+.receipt-reference>span{font-family:var(--font);font-size:.8125rem;color:var(--muted)}
+.receipt-reference>strong{font-size:.95rem;font-weight:600}
+@media(max-width:600px){.delivery-row{align-items:flex-start;flex-direction:column;gap:12px;padding:16px}.delivery-row .btn{width:100%}}

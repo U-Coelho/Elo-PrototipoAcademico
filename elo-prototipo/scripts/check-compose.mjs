@@ -1,0 +1,17 @@
+import { readFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import { parse } from 'yaml';
+const config = parse(await readFile('compose.yaml','utf8'));
+assert.deepEqual(Object.keys(config.services).sort(),['app','db']);
+assert.equal(config.services.app.depends_on.db.condition,'service_healthy');
+assert.ok(config.services.db.healthcheck.test);
+assert.equal(config.services.db.ports,undefined,'Banco deve ficar somente na rede interna.');
+assert.ok(config.services.db.volumes.some(v=>v.startsWith('postgres_data:')));
+assert.ok(Object.hasOwn(config.volumes,'postgres_data'));
+assert.ok(config.services.app.ports.every(p=>p.startsWith('127.0.0.1:')));
+assert.ok(config.services.app.environment.SESSION_SECRET.includes('SESSION_SECRET:?'));
+assert.equal(config.services.app.read_only,true);
+const dockerfile = await readFile('Dockerfile','utf8');
+assert.match(dockerfile,/USER node/); assert.match(dockerfile,/npm ci --omit=dev/);
+console.log('Estrutura Compose validada: app + PostgreSQL, banco interno, volume, healthcheck e segredo obrigatório.');
+console.log('Esta inspeção não executa docker compose config, build ou containers.');

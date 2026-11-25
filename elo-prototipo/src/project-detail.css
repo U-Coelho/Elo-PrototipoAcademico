@@ -1,0 +1,135 @@
+.project-detail-page{--reward-accent:#287c75;--reward-soft:#e7f2ef}
+[data-theme=dark] .project-detail-page{--reward-accent:#88c6bd;--reward-soft:#283d39}
+.project-heading{max-width:900px;margin:0 0 28px}
+.project-heading .card-category{font-size:.875rem;margin-bottom:9px}
+.project-heading h1{font-size:clamp(1.75rem,2.8vw,2.15rem);letter-spacing:-.025em;line-height:1.2;overflow-wrap:anywhere}
+.project-description{font-size:1rem;color:var(--muted);line-height:1.65;margin-top:14px;max-width:850px}
+.project-byline{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;color:var(--muted);font-size:.875rem;margin-top:17px}
+.project-byline button{border:0;padding:0;min-height:24px;font:inherit;font-weight:600;color:var(--text);background:transparent;text-decoration:underline;text-underline-offset:3px}
+.project-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(310px,.9fr);align-items:start;gap:28px}
+.project-main{min-width:0}
+.project-cover{width:100%;height:340px;object-fit:cover;border-radius:8px;background:var(--surface-alt)}
+.project-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-top:22px;overflow-x:auto;scrollbar-width:thin;scroll-padding:10px}
+.project-tab{position:relative;flex:0 0 auto;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:14px 15px;min-height:49px;font-size:.875rem;font-weight:500;white-space:nowrap;border-radius:0}
+.project-tab:first-child{padding-left:0;padding-right:19px}
+.project-tab:hover{color:var(--text);background:var(--surface-alt)}
+.project-tab[aria-selected=true]{border-bottom-color:var(--accent);color:var(--text);font-weight:600}
+.project-tab:focus-visible{outline:2px solid var(--focus);outline-offset:-4px}
+.project-tab-panel{padding-top:27px;min-width:0;outline-offset:5px}
+.project-tab-panel[hidden]{display:none}
+.project-section-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:20px}
+.project-section-heading h2{font-size:1.2rem;font-weight:600;line-height:1.35}
+.project-section-heading>div>p{font-size:.9375rem;color:var(--muted);line-height:1.6;margin-top:7px}
+.project-section-heading>.btn{flex-shrink:0}
+.project-copy{white-space:pre-wrap;overflow-wrap:anywhere;font-size:1rem;line-height:1.85;color:var(--text)}
+.project-story{max-width:75ch}
+.project-funding{position:sticky;top:96px;min-width:0;padding:24px}
+.project-funding>h2{font-size:.875rem;font-weight:500;color:var(--muted);margin-bottom:14px}
+.project-raised{display:block;font-size:clamp(1.7rem,2.1vw,2rem);letter-spacing:-.03em;line-height:1.2;font-weight:650;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.project-goal{font-size:.875rem;line-height:1.6;color:var(--muted);margin-top:8px}
+.project-progress{--reward-accent:#287c75;margin-top:21px;min-width:0}
+[data-theme=dark] .project-progress{--reward-accent:#88c6bd}
+.project-progress-track{display:flex;height:7px;width:100%;overflow:hidden;background:var(--surface-alt);border-radius:2px}
+.project-progress-track>span{height:100%;flex:0 0 auto;display:block}
+.project-progress-direct{background:var(--accent)}
+.project-progress-rewards{background:var(--reward-accent);box-shadow:inset 2px 0 0 var(--surface)}
+.project-progress-summary{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:5px 12px;margin-top:10px;font-size:.875rem;line-height:1.5;color:var(--muted)}
+.project-progress-summary>strong{font-weight:500;color:var(--text)}
+.project-funding-legend{display:grid;gap:8px;margin:18px 0 0;font-size:.875rem;line-height:1.5}
+.project-funding-legend>div{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.project-funding-legend dt{display:flex;align-items:center;gap:8px;color:var(--muted)}
+.project-funding-legend dd{margin:0;font-variant-numeric:tabular-nums;color:var(--text);text-align:right}
+.project-funding-key{width:9px;height:9px;display:inline-block;flex-shrink:0;border-radius:2px;background:var(--accent)}
+.project-funding-key--rewards{background:var(--reward-accent)}
+.project-funding-facts{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:17px;margin:20px 0;font-size:.875rem;color:var(--muted)}
+.project-funding-facts strong{font-weight:500;color:var(--text)}
+.project-funding>.btn+.btn{margin-top:10px}
+.project-progress--compact{margin-top:0}
+.project-progress--compact .project-progress-track{height:5px}
+.project-creator-heading{display:flex;align-items:center;gap:14px;margin-bottom:23px}
+.project-creator-heading h3{font-size:1.125rem;font-weight:600}
+.project-creator-heading p{font-size:.875rem;color:var(--muted);margin-top:5px}
+.project-creator-avatar{height:54px;width:54px;flex-shrink:0;display:grid;place-items:center;border-radius:50%;background:var(--surface-alt);border:1px solid var(--border);font-size:1rem;font-weight:600}
+.project-profile-facts{display:flex;flex-wrap:wrap;gap:20px 45px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:21px 0;margin:25px 0}
+.project-profile-facts dt{font-size:.875rem;color:var(--muted);margin-bottom:6px}
+.project-profile-facts dd{margin:0;font-size:.9375rem;font-variant-numeric:tabular-nums}
+.project-profile-links h3{font-size:1rem;font-weight:600;margin-bottom:12px}
+.project-profile-links>p{color:var(--muted);font-size:.9375rem}
+.project-profile-links ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.project-profile-links a{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:3px 14px;min-height:46px;padding:11px 13px;border:1px solid var(--border);border-radius:6px;text-decoration:none;overflow-wrap:anywhere}
+.project-profile-links a:hover{background:var(--surface-alt);border-color:var(--input-border)}
+.project-profile-links a strong{font-size:.9375rem;font-weight:500}
+.project-profile-links a span{font-size:.8125rem;color:var(--muted)}
+.project-rewards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.project-reward{border:1px solid var(--border);border-radius:8px;background:var(--surface);padding:20px;display:flex;flex-direction:column;min-width:0}
+.project-reward-heading h3{font-size:1rem;font-weight:600;line-height:1.4;overflow-wrap:anywhere}
+.project-reward-heading>span{display:block;font-size:.8125rem;color:var(--muted);margin-top:6px}
+.project-reward>p{font-size:.9375rem;color:var(--muted);line-height:1.7;margin-top:15px;overflow-wrap:anywhere;white-space:pre-wrap}
+.project-reward-price{font-size:1.35rem;font-variant-numeric:tabular-nums;font-weight:600;margin:23px 0 20px}
+.project-reward-price small{font-size:.875rem;font-weight:400;color:var(--muted)}
+.project-reward>.btn{margin-top:auto}
+.project-posts{display:grid;gap:0}
+.project-post{border-bottom:1px solid var(--border);padding:0 0 25px;margin-bottom:25px}
+.project-post:last-child{border-bottom:0;margin-bottom:0}
+.project-post header{margin-bottom:15px}
+.project-post h3{font-size:1.0625rem;line-height:1.5;font-weight:600;overflow-wrap:anywhere}
+.project-post header p{font-size:.8125rem;color:var(--muted);margin-top:7px;line-height:1.6}
+.project-comment>header{display:flex;align-items:center;gap:12px;margin-bottom:15px}
+.project-comment-avatar{width:37px;height:37px;flex-shrink:0;display:grid;place-items:center;border:1px solid var(--border);border-radius:50%;background:var(--surface-alt);font-size:.8125rem;font-weight:600}
+.project-comment h3{font-size:.9375rem}
+.project-comment header p{margin-top:3px}
+.project-comment-count{font-weight:400;color:var(--muted);font-size:.875rem;margin-left:5px}
+.project-section-empty{padding:25px 0;color:var(--muted);font-size:.9375rem;line-height:1.75}
+@media(max-width:1100px){.project-layout{grid-template-columns:minmax(0,1.3fr) minmax(290px,.95fr);gap:22px}.project-cover{height:300px}.project-funding{padding:21px}.project-tab{padding-left:10px;padding-right:10px}.project-rewards-grid{grid-template-columns:1fr}}
+@media(max-width:1000px){.project-layout{grid-template-columns:1fr}.project-funding{position:static;grid-row:1}.project-funding .project-funding-legend{max-width:520px}.project-cover{height:320px}.project-rewards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project-heading{margin-bottom:23px}}
+@media(max-width:760px){.project-heading h1{font-size:1.8rem}.project-description{font-size:1rem}.project-cover{height:290px}.project-tab:first-child{padding-right:14px}.project-section-heading{flex-wrap:wrap;gap:12px}.project-section-heading>.btn{flex-shrink:1}.project-profile-facts{gap:20px 30px}.project-funding{padding:22px}.project-reward{padding:18px}}
+@media(max-width:520px){.project-heading h1{font-size:1.65rem}.project-heading{margin-bottom:22px}.project-layout{gap:25px}.project-cover{height:220px}.project-tabs{margin-top:15px}.project-tab{padding-left:12px;padding-right:12px;font-size:.875rem}.project-tab-panel{padding-top:23px}.project-rewards-grid{grid-template-columns:1fr}.project-profile-facts{display:grid;gap:20px}.project-section-heading h2{font-size:1.15rem}.project-funding{padding:20px}.project-progress-summary{font-size:.8125rem}.project-funding-legend,.project-funding-facts{font-size:.8125rem}.project-copy{font-size:1rem;line-height:1.8}.project-raised{font-size:1.8rem}.project-section-heading>.btn{min-width:0}.project-profile-links a{align-items:flex-start;flex-direction:column}}
+
+/* Editorial project view: content first, one contained funding decision. */
+.project-heading{max-width:none;margin-bottom:30px}
+.project-heading .card-category{font-size:.6875rem;letter-spacing:.08em;margin-bottom:12px}
+.project-heading h1{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:600;letter-spacing:-.04em;line-height:1.15;max-width:950px}
+.project-description{font-size:.9375rem;line-height:1.75;max-width:75ch;margin-top:16px}
+.project-byline{font-size:.8125rem;margin-top:16px}
+.project-heading-top{gap:24px}
+.project-config-button{border-color:var(--border);background:none;border-radius:5px}
+.project-layout{grid-template-columns:minmax(0,1.65fr) minmax(300px,.85fr);gap:36px}
+.project-cover{height:auto;aspect-ratio:8/5;border-radius:6px}
+.project-tabs{margin-top:26px}
+.project-tab{font-size:.8125rem;min-height:50px;padding-inline:14px}
+.project-tab-panel{padding-top:28px}
+.project-section-heading h2{font-size:1.125rem;letter-spacing:-.015em}
+.project-copy{font-size:.9375rem;line-height:1.9;max-width:72ch}
+.project-funding{padding:25px;border-radius:6px;background:var(--surface)}
+.project-funding>h2{font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.project-raised{font-size:clamp(1.75rem,2.4vw,2.15rem);font-weight:600;letter-spacing:-.045em}
+.project-goal{font-size:.8125rem;line-height:1.75}
+.project-progress-track{height:5px;border-radius:0}
+.project-progress-summary,.project-funding-legend,.project-funding-facts{font-size:.75rem;line-height:1.65}
+.project-funding-key{width:7px;height:7px;border-radius:0}
+.project-funding-facts{margin:22px 0;gap:14px}
+.project-funding-facts strong{font-size:.875rem;font-weight:600}
+.project-rewards-grid{gap:24px}
+.project-reward{padding:22px 0 0;border:0;border-top:1px solid var(--border);border-radius:0;background:none}
+.project-reward-heading h3{font-size:1.0625rem}
+.project-reward-heading>span{font-size:.75rem}
+.project-reward>p{font-size:.875rem;line-height:1.8}
+.project-reward-price{font-size:1.5rem;font-weight:600;letter-spacing:-.035em}
+.project-reward-price small{font-size:.75rem;letter-spacing:0}
+.project-reward>.btn{align-self:flex-start;min-width:140px}
+.project-post h3{font-size:1.0625rem}
+.project-post header p{font-size:.75rem}
+.project-creator-heading h3{font-size:1.125rem}
+.project-profile-facts{font-size:.8125rem}
+.project-profile-links a{border:0;border-bottom:1px solid var(--border);border-radius:0;padding:12px 0}
+.project-profile-links a:hover{background:none;color:var(--accent)}
+.project-profile-links a strong{font-size:.875rem}
+.project-profile-links a span{font-size:.75rem}
+@media(max-width:1100px){.project-layout{grid-template-columns:minmax(0,1.35fr) minmax(285px,.9fr);gap:25px}.project-funding{padding:22px}}
+@media(max-width:960px){.project-layout{grid-template-columns:1fr}.project-funding{position:static;grid-row:auto}.project-cover{max-height:none}.project-rewards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.project-heading h1{font-size:1.875rem}.project-description{font-size:.875rem}.project-byline{font-size:.75rem}.project-heading{margin-bottom:23px}.project-layout{gap:27px}.project-tabs{margin-top:19px}.project-tab{padding-inline:12px;font-size:.75rem}.project-tab:first-child{padding-right:14px}.project-tab-panel{padding-top:24px}.project-rewards-grid{grid-template-columns:1fr}.project-funding{padding:23px 21px}.project-copy{font-size:.875rem;line-height:1.9}.project-reward>.btn{align-self:stretch}.project-section-heading{flex-wrap:wrap}}
+
+.project-owner-actions{display:flex;justify-content:flex-end;margin:-8px 0 22px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.project-owner-actions .btn{background:none;border-color:transparent;color:var(--danger);padding-inline:0;min-height:36px;font-size:.75rem}
+.project-owner-actions .btn:hover{background:var(--danger-bg);padding-inline:9px}
+@media(max-width:560px){.project-owner-actions{justify-content:flex-start;margin:-3px 0 22px;padding-bottom:10px}}

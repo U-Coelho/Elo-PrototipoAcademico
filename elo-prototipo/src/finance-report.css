@@ -1,0 +1,19 @@
+.revenue-panel{margin-bottom:25px}.revenue-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.revenue-heading h2{font-size:1.25rem}.revenue-heading p{font-size:.9rem;color:var(--muted);margin-top:6px}.revenue-refresh{display:flex;align-items:center;gap:7px;white-space:nowrap}.revenue-refresh svg{width:17px;height:17px}.revenue-controls{display:flex;gap:28px;align-items:flex-end;margin:25px 0}.revenue-project-control{flex:1;max-width:420px;min-width:0}.revenue-period-control{min-width:285px}.revenue-period-control .segmented button{padding:8px 15px;min-height:44px}.revenue-summary{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:25px 0 20px}.revenue-summary strong{display:block;font-size:2rem;line-height:1.2;font-weight:650;letter-spacing:-.04em}.revenue-summary>div>span{display:block;font-size:.875rem;color:var(--muted);margin-top:8px}.revenue-summary>p{font-size:.875rem;text-align:right}.revenue-summary>p>span{display:block;color:var(--muted);font-size:.8rem;margin-top:5px}.revenue-note{border-top:1px solid var(--border);padding-top:18px;margin-top:20px;color:var(--muted);font-size:.875rem;line-height:1.65}.revenue-ledger-subtitle{font-size:.875rem;color:var(--muted);margin-top:8px}.revenue-entry-amount{color:var(--accent);font-weight:650}.revenue-ledger tfoot td,.revenue-ledger tfoot th{border-top:1px solid var(--border);padding-top:17px;font-size:.875rem}.revenue-table-empty{color:var(--muted);font-size:.9rem;line-height:1.7}.wallet-history{margin-top:24px;border-top:1px solid var(--border);padding-top:12px}.wallet-history>summary{min-height:44px;padding:11px 0;cursor:pointer;color:var(--accent);font-size:.875rem;font-weight:600}.wallet-history>p{margin:6px 0 18px;color:var(--muted);font-size:.875rem;line-height:1.65}.revenue-bottom-layout>.panel{min-width:0}
+@media(max-width:760px){.revenue-controls{gap:18px;flex-wrap:wrap}.revenue-project-control{max-width:none;flex-basis:100%}.revenue-period-control{min-width:0;flex:1}.revenue-heading{align-items:flex-start}.revenue-heading h2{font-size:1.15rem}.revenue-refresh{font-size:.8rem}.revenue-summary strong{font-size:1.75rem}.revenue-summary>p{font-size:.8rem}.revenue-summary>p>span{font-size:.75rem}}
+@media(max-width:400px){.revenue-heading{flex-direction:column;gap:2px}.revenue-heading .text-button{align-self:flex-start}.revenue-controls{margin-top:15px}.revenue-summary{align-items:flex-start;flex-direction:column;gap:13px}.revenue-summary>p{text-align:left}.revenue-summary>p>span{display:inline;margin-left:8px}.revenue-period-control .segmented button{font-size:.8rem;padding:8px 10px}.revenue-note{font-size:.8125rem}}
+
+/* The chart remains the primary financial view; secondary values stay quiet. */
+.revenue-heading h2{font-size:1.125rem;font-weight:600}
+.revenue-heading>div>p{font-size:.8125rem}
+.revenue-controls{gap:24px;margin-top:24px}
+.revenue-controls label{font-size:.6875rem;letter-spacing:.04em;font-weight:500}
+.revenue-project-control select{font-size:.8125rem}
+.revenue-summary strong{font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.revenue-note,.revenue-summary p{font-size:.75rem}
+.revenue-refund-totals{background:none;border-top:1px solid var(--border);border-bottom:1px solid var(--border);border-radius:0;padding:20px 0;margin-top:22px}
+.revenue-refund-totals dt{font-size:.75rem}
+.revenue-refund-totals dd{font-size:1.125rem;font-weight:500}
+.revenue-bottom-layout{gap:28px}
+.revenue-receipts-table th,.revenue-receipts-table td{font-size:.75rem}
+.wallet-history>summary{color:var(--text);font-size:.8125rem}
+@media(max-width:560px){.revenue-controls{gap:17px}.revenue-summary strong{font-size:1.8rem}.revenue-refund-totals{gap:20px}.revenue-refund-totals dt{font-size:.6875rem}}

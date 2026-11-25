@@ -1,0 +1,13 @@
+.project-milestones{border-top:1px solid var(--border);margin-top:32px;padding-top:28px}
+.project-milestones>h2{font-size:1.125rem}.project-milestones>p{color:var(--muted);line-height:1.6;margin-top:8px}
+.project-milestones ol{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:14px}
+.project-milestones li{padding:20px;border:1px solid var(--border);border-radius:6px;background:var(--surface)}
+.milestone-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
+.milestone-heading h3{font-size:1rem;overflow-wrap:anywhere}.milestone-heading>span{font-size:.8125rem;color:var(--muted);white-space:nowrap}
+.project-milestones li>strong{font-size:1.25rem;font-variant-numeric:tabular-nums}.project-milestones li>p{font-size:.875rem;line-height:1.65;color:var(--muted);margin-top:10px;white-space:pre-wrap;overflow-wrap:anywhere}
+.milestone-progress{height:4px;background:var(--surface-alt);margin:18px 0 10px;overflow:hidden}
+.milestone-progress span{display:block;height:100%;background:var(--accent)}
+.milestone-caption{display:flex;justify-content:space-between;gap:12px;font-size:.8125rem;color:var(--muted)}
+.project-creator-actions{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:16px}
+.project-section-heading:has(>.project-creator-actions){align-items:center}
+@media(max-width:600px){.project-milestones li{padding:16px}.milestone-heading{align-items:flex-start;flex-direction:column;gap:6px}.project-creator-actions{justify-content:flex-start;gap:12px}.milestone-caption{flex-wrap:wrap}}

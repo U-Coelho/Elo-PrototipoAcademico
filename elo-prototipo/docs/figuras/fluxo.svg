@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="453.54559055118114" height="340" preserveAspectRatio="xMinYMin meet" viewBox="0 0 453 340" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="453.54559055118114" height="340"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-340)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="142.77279527559057" y="285" width="168.0" height="46" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="194.68832261934057" y="315" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,630) scale(1,-1)">Apoio criado</text>
+			<text x="169.73568590059057" y="301" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,602) scale(1,-1)">pending: ainda sem crédito</text>
+			<rect x="10" y="218" width="151" height="46" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="32.400146484375" y="248" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,496) scale(1,-1)">Pagamento recusado</text>
+			<text x="34.8062744140625" y="234" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,468) scale(1,-1)">failed: sem arrecadação</text>
+			<rect x="275.54559055118114" y="218" width="168.0" height="46" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(91%,93%,95%); fill-rule: evenodd;"/>
+			<text x="301.20342746524364" y="248" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,496) scale(1,-1)">Pagamento confirmado</text>
+			<text x="311.75567355899364" y="234" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,468) scale(1,-1)">confirmed: efeito único</text>
+			<path d="M 198.772795,285 L 85,264 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="85 264, 90.78665 262.4142, 89.83923 267.5471" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<path d="M 254.772795,285 L 359.545591,264 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="359.5456 264, 354.7612 267.6207, 353.7354 262.5029" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<rect x="275.54559055118114" y="151" width="168.0" height="46" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(91%,93%,95%); fill-rule: evenodd;"/>
+			<text x="312.57500949649364" y="181" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,362) scale(1,-1)">Efeito transacional</text>
+			<text x="299.34026828555614" y="167" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,334) scale(1,-1)">Lançamentos e arrecadação</text>
+			<path d="M 359.545591,218 L 359.545591,197 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="359.5456 197, 362.1554 202.4027, 356.9358 202.4027" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<rect x="10" y="80" width="151" height="56" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="49.037109375" y="120" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,240) scale(1,-1)">Entrega digital</text>
+			<text x="30.3206787109375" y="106" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,212) scale(1,-1)">Mensagem e link privados</text>
+			<text x="24.5107421875" y="94" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,188) scale(1,-1)">Confirmação de recebimento</text>
+			<rect x="275.54559055118114" y="80" width="168.0" height="56" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(91%,93%,95%); fill-rule: evenodd;"/>
+			<text x="309.06817355899364" y="120" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,240) scale(1,-1)">Exclusão com saldo</text>
+			<text x="306.21014133243114" y="106" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,212) scale(1,-1)">Devolver todos os apoios</text>
+			<text x="318.09673801211864" y="94" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,188) scale(1,-1)">Encerrar cobranças</text>
+			<path d="M 275.545591,174 L 85,174 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 85,174 L 85,136 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="85 136, 87.60979 141.4027, 82.39021 141.4027" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<path d="M 359.545591,151 L 359.545591,136 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="359.5456 136, 362.1554 141.4027, 356.9358 141.4027" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<rect x="10" y="0" width="433.54559055118114" height="60" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="152.66781480684057" y="44" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,88) scale(1,-1)">Após 720 horas da liquidação</text>
+			<text x="142.27938707246557" y="30" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,60) scale(1,-1)">Remover conteúdo, imagens e entregas</text>
+			<text x="128.54891832246557" y="18" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,36) scale(1,-1)">Preservar pagamentos, devoluções e auditoria</text>
+			<path d="M 359.545591,80 L 359.545591,60 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="359.5456 60, 362.1554 65.40268, 356.9358 65.40268" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+		</g>
+	</g>
+</svg>

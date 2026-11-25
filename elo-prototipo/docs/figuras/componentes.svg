@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="453.54559055118114" height="394" preserveAspectRatio="xMinYMin meet" viewBox="0 0 453 394" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="453.54559055118114" height="394"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-394)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="70" y="333" width="313.54559055118114" height="57" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="167.25399644746557" y="374" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,748) scale(1,-1)">Interface e cliente HTTP</text>
+			<text x="168.94247300996557" y="360" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,720) scale(1,-1)">Navegação e componentes</text>
+			<text x="189.29232652559057" y="348" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,696) scale(1,-1)">src/services/api.js</text>
+			<rect x="143.77279527559057" y="263" width="166.0" height="44" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(91%,93%,95%); fill-rule: evenodd;"/>
+			<text x="178.05905015840307" y="291" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,582) scale(1,-1)">Coordenação HTTP</text>
+			<text x="186.38155992402807" y="277" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,554) scale(1,-1)">server/http/app.mjs</text>
+			<rect x="0" y="166" width="137.18186351706038" height="66" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(91%,93%,95%); fill-rule: evenodd;"/>
+			<text x="35.62462316478019" y="216" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,432) scale(1,-1)">Autenticação</text>
+			<text x="10.49156652415519" y="202" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,404) scale(1,-1)">Identidade, senha e sessão</text>
+			<text x="44.82933507884269" y="190" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,380) scale(1,-1)">server/auth</text>
+			<rect x="158.18186351706038" y="166" width="137.18186351706038" height="66" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(91%,93%,95%); fill-rule: evenodd;"/>
+			<text x="205.77535875215307" y="216" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,432) scale(1,-1)">Domínio</text>
+			<text x="169.47592027559057" y="202" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,404) scale(1,-1)">Casos de uso e invariantes</text>
+			<text x="196.67709215059057" y="190" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,380) scale(1,-1)">server/domain</text>
+			<rect x="316.36372703412076" y="166" width="137.18186351706038" height="66" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(91%,93%,95%); fill-rule: evenodd;"/>
+			<text x="355.78742246452595" y="216" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,432) scale(1,-1)">Repositório</text>
+			<text x="329.50629453483845" y="202" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,404) scale(1,-1)">Transação e mapeamento</text>
+			<text x="349.58246640983845" y="190" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,380) scale(1,-1)">server/repository</text>
+			<rect x="0" y="77" width="137.18186351706038" height="61" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="55.17369543040519" y="122" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,244) scale(1,-1)">Mídia</text>
+			<text x="31.88975988353019" y="108" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,216) scale(1,-1)">Avatares e capas</text>
+			<text x="41.13695226634269" y="96" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,192) scale(1,-1)">server/profile</text>
+			<rect x="158.18186351706038" y="77" width="137.18186351706038" height="61" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="193.21688707246557" y="122" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,244) scale(1,-1)">Regras puras</text>
+			<text x="175.81930406465307" y="108" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,216) scale(1,-1)">Metas, links e projeções</text>
+			<text x="203.54232652559057" y="96" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,192) scale(1,-1)">src/domain</text>
+			<rect x="316.36372703412076" y="77" width="137.18186351706038" height="61" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="354.32624082390095" y="122" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,244) scale(1,-1)">Manutenção</text>
+			<text x="343.48957090202595" y="108" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,216) scale(1,-1)">Agenda de expurgo</text>
+			<text x="353.80597715202595" y="96" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,192) scale(1,-1)">server/projects</text>
+			<rect x="149.77279527559057" y="1" width="154.0" height="46" rx="3" ry="3" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="196.43405015840307" y="31" style="font-family: Arial-Bold; font-size: 10.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,62) scale(1,-1)">PostgreSQL</text>
+			<text x="170.00472886934057" y="17" style="font-family: Arial; font-size: 9.5px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,34) scale(1,-1)">Negócio, contas e sessões</text>
+			<path d="M 226.772795,333 L 226.772795,307 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="226.7728 307, 229.3826 312.4027, 224.163 312.4027" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<text x="238.77279527559057" y="317" style="font-family: Arial; font-size: 9.2px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,634) scale(1,-1)">HTTP</text>
+			<path d="M 143.772795,283 L 68.590932,232 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="68.59093 232, 74.52705 232.8732, 71.59689 237.1927" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<path d="M 226.772795,263 L 226.772795,232 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="226.7728 232, 229.3826 237.4027, 224.163 237.4027" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<path d="M 309.772795,283 L 384.954659,232 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="384.9547 232, 381.9487 237.1927, 379.0185 232.8732" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<path d="M 68.590932,166 L 68.590932,138 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="68.59093 138, 71.20072 143.4027, 65.98114 143.4027" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<path d="M 226.772795,166 L 226.772795,138 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="226.7728 138, 229.3826 143.4027, 224.163 143.4027" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<path d="M 384.954659,138 L 384.954659,166 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="384.9547 166, 382.3449 160.5973, 387.5645 160.5973" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<path d="M 137.181864,198 L 148.181864,198 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 148.181864,198 L 148.181864,24 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 148.181864,24 L 149.772795,24 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="149.7728 24, 144.3701 26.60979, 144.3701 21.39021" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<path d="M 316.363727,198 L 306.363727,198 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 306.363727,198 L 306.363727,24 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 306.363727,24 L 303.772795,24 Z" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="303.7728 24, 309.1755 21.39021, 309.1755 26.60979" style="stroke: rgb(33%,36%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,36%,40%); fill-rule: evenodd;"/>
+			<text x="125.77336742331038" y="52" style="font-family: Arial; font-size: 8.7px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,104) scale(1,-1)">SQL</text>
+			<text x="311.36372703412076" y="52" style="font-family: Arial; font-size: 8.7px;fill: rgb(18%,20%,22%); stroke:none;" transform="translate(0,104) scale(1,-1)">SQL</text>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,41 @@
+ELO - EXECUTAR NO WINDOWS
+
+1. Instale Docker Desktop pelo site oficial e inicie o mecanismo Linux/WSL2.
+2. Instale Node.js 22.9 ou superior para gerar a configuração inicial.
+3. Extraia todo o ZIP. Abra o PowerShell DENTRO da pasta elo-prototipo.
+   Essa pasta deve conter compose.yaml, Dockerfile, package.json e README.md.
+4. Execute:
+
+   node scripts/setup-env.mjs
+   docker compose up -d --build
+
+5. Abra http://localhost:3000
+   Se a porta estiver ocupada, edite somente PORT=3001 no .env e execute:
+   docker compose up -d
+   Depois abra http://localhost:3001
+
+Se aparecer "no configuration file provided", o terminal está na pasta errada.
+Use dir para conferir os arquivos e cd elo-prototipo para entrar na pasta.
+
+Cada instalação tem suas próprias contas e banco. Cadastre criador ou apoiador
+na página inicial. Para gerar o administrador fixo na instalação nova:
+
+docker compose exec -T app node server/setup-admin.mjs | Set-Content -Encoding utf8 .admin-acesso.json
+
+O arquivo .admin-acesso.json contém a senha inicial. Guarde-o em local privado.
+Não compartilhe esse arquivo, .env, .local, backups ou exportações do banco.
+O gerador não muda a senha de um administrador que já existe.
+
+Para atualizar o código conservando contas e registros:
+docker compose up -d --build
+
+Para conferir o estado:
+docker compose ps
+docker compose logs app
+
+Para parar conservando o banco:
+docker compose down
+
+Não use opções de remoção de volumes se quiser manter seus dados.
+Os pagamentos, devoluções e repasses são simulados.
+Leia README.md, docs/ARQUITETURA.md e docs/REVISAO-FINAL.md para detalhes.

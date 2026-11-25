@@ -1,0 +1,17 @@
+.git
+.env
+.env.*
+!.env.example
+node_modules
+dist
+.local
+.cache
+qa
+backups
+*.zip
+.openai
+tests/*
+!tests/postgres.test.mjs
+docs
+
+.admin-acesso.json
