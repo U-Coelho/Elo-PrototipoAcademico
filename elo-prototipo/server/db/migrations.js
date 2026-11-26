@@ -6,7 +6,6 @@ import path from 'node:path';
 const migrationsDirectory = fileURLToPath(new URL('./migrations/', import.meta.url));
 const MIGRATION_LOCK = '783642015';
 
-/** Run at startup/CLI, never from a business request. Applied migrations are immutable. */
 export async function applyMigrations(pool) {
   const client = await pool.connect();
   let locked = false;
