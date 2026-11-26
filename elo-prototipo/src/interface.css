@@ -1,5 +1,4 @@
-/* Elo editorial system: neutral surfaces, open content and deliberate hierarchy. */
-/* Static text and reading targets must not look like editable controls. */
+
 body{cursor:default}
 dialog:focus{outline:none}
 a[href],button,select,summary{cursor:pointer}
@@ -17,7 +16,6 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .text-button{font-size:.875rem;line-height:1.4;min-height:44px}
 .text-button svg{height:17px;width:17px}
 
-/* A quiet, persistent frame around the content. */
 .shell{grid-template-columns:232px minmax(0,1fr)}
 .workspace{min-width:0}
 .sidebar{width:232px;padding:26px 16px 18px;border-right:1px solid var(--border)}
@@ -58,7 +56,6 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .section-heading p{font-size:.8125rem;margin-top:6px}
 .section-heading>.muted{font-size:.8125rem;white-space:nowrap}
 
-/* The discovery introduction and a compact, actionable feature. */
 .hero{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:44px;align-items:center;background:none;border:0;border-bottom:1px solid var(--border);border-radius:0;padding:0 0 32px;min-height:0;overflow:visible}
 .hero-copy{padding:0;min-width:0}
 .hero h1{font-size:clamp(1.75rem,2.6vw,2.35rem);line-height:1.14;letter-spacing:-.045em;max-width:440px}
@@ -79,7 +76,6 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .featured-funding span{font-size:.75rem;color:var(--muted)}
 .featured-copy>.text-button{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;color:var(--text);margin-top:7px}
 
-/* Categories read as navigation; covers give each project its identity. */
 .filter-row{gap:18px;align-items:flex-start;margin-bottom:28px}
 .category-list{gap:3px}
 .chip{border:1px solid transparent;border-radius:4px;min-height:44px;padding:9px 11px;font-size:.8125rem;line-height:1.4}
@@ -113,7 +109,6 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .card-footer svg{display:none}
 .progress,.progress>span{border-radius:0}
 
-/* Open pages and restrained containers for decisions and structured data. */
 .panel,.stat-card,.support-row,.status-box{border-radius:6px;box-shadow:none}
 .panel{padding:25px;border-color:var(--border)}
 .panel h2,.panel-heading h2{font-size:1.0625rem;font-weight:600}
@@ -156,7 +151,6 @@ th{font-size:.6875rem;font-weight:500}
 .page-footer,.page-footer button{font-size:.6875rem}
 .page-footer button{min-height:24px}
 
-/* Dialogs and account access share the same typography and spacing. */
 dialog{border:1px solid var(--border);border-radius:8px;box-shadow:0 18px 65px #0003}
 .modal-head{padding:26px 28px 22px;border-bottom:1px solid var(--border)}
 .modal-head h2{font-size:1.25rem;font-weight:600;letter-spacing:-.025em}
