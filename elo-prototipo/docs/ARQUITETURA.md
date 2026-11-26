@@ -5,14 +5,8 @@ Financiamento coletivo e processo financeiro
 Vitor Hugo Fernandes Costa
 João Paulo Andrade Coelho
 
-Uni-FACEF - Centro Universitário Municipal de Franca
-Departamento de Computação
 Disciplina: Arquitetura de Software
-Docente: Carlos Alberto Lucas
-Turma: 6º semestre
 Franca - 2026
-
-Versão final revisada em 25 de novembro de 2026
 
 ## 1 Problema e escopo do sistema
 
@@ -337,26 +331,6 @@ docker compose exec -T -e ELO_RUN_POSTGRES_TESTS=1 app `
 | Pelo menos três conascências | Seção 6 | Cinco exemplos classificados, tratamento e impacto de evolução. |
 | Justificativas arquiteturais | Seções 7 e 8 | Processo financeiro, alternativas e custos aceitos. |
 | Evidência e evolução | Seções 9 e 10 | Limitações, testes, revisão e roteiro observável no protótipo. |
-
-O enunciado pede documento PDF ou Word e link do projeto, repositório ou protótipo. O prazo informado é 26 de novembro de 2026, até as 17h, com envio a carloslucas@facef.br e presença na data para eventual apresentação sorteada. O pacote contém código e instruções, mas o link de repositório ou aplicação deve acompanhar a mensagem de entrega. Não houve envio de e-mail ou publicação automática ao preparar esta documentação.
-
-## 11 Referências
-
-[R1] LUCAS, Carlos Alberto. Enunciado da atividade de Arquitetura de Software. Uni-FACEF, 6º semestre, 2026. Quatro páginas fornecidas pela equipe, com o cenário plataforma de crowdfunding e processo financeiro.
-
-[R2] RICHARDS, Mark; FORD, Neal. Fundamentos da Arquitetura de Software: uma abordagem moderna de engenharia. 2. ed. São Paulo: Novatec, 2025. Disponível em: https://novatec.com.br/livros/fundamentos-arquitetura-software-2ed/
-
-[R3] BROWN, Simon. C4 model: Container diagram e Component diagram. Disponível em: https://c4model.com/diagrams/container e https://c4model.com/diagrams/component
-
-[R4] CONNASCENCE.IO. Name, Type, Meaning, Position, Execution; Strength, Degree e Locality. Disponível em: https://connascence.io/ e páginas específicas name.html, type.html, meaning.html, position.html e execution.html.
-
-[R5] POSTGRESQL GLOBAL DEVELOPMENT GROUP. PostgreSQL 17 Documentation: Explicit Locking e Transaction Isolation. Disponível em: https://www.postgresql.org/docs/17/explicit-locking.html e https://www.postgresql.org/docs/17/transaction-iso.html
-
-[R6] DOCKER. How Compose works. Disponível em: https://docs.docker.com/compose/intro/compose-application-model/
-
-[R7] OWASP FOUNDATION. Password Storage Cheat Sheet e Authentication Cheat Sheet. Disponível em: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html e https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
-
-[R8] OWASP FOUNDATION. File Upload Cheat Sheet. Disponível em: https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html
 
 [R9] W3C. Web Content Accessibility Guidelines (WCAG) 2.2. Recomendação de 12 de dezembro de 2024. Disponível em: https://www.w3.org/TR/WCAG22/
 
