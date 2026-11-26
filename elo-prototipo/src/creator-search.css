@@ -10,7 +10,7 @@
 
 .profile-photo-current{display:flex;align-items:center;gap:14px;margin-bottom:18px}
 
-/* Public profiles and people search use the same open editorial rhythm. */
+/* Os perfis públicos e a busca de pessoas usam o mesmo ritmo editorial aberto. */
 .search-page-heading{margin:4px 0 30px}
 .search-page-heading h1{font-size:clamp(1.625rem,2.6vw,2.1rem);letter-spacing:-.035em}
 .search-page-heading p{font-size:.875rem}
