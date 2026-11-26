@@ -3,6 +3,7 @@
 Financiamento coletivo e processo financeiro
 
 Vitor Hugo Fernandes Costa
+
 João Paulo Andrade Coelho
 
 Disciplina: Arquitetura de Software
