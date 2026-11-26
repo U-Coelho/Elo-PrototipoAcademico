@@ -2,13 +2,6 @@
 
 Financiamento coletivo e processo financeiro
 
-Vitor Hugo Fernandes Costa
-
-João Paulo Andrade Coelho
-
-Disciplina: Arquitetura de Software
-Franca - 2026
-
 ## 1 Problema e escopo do sistema
 
 O Elo é um protótipo de plataforma de financiamento coletivo, inspirado nas jornadas de criação e apoio de projetos. Seu problema central é registrar contribuições e manter consistência entre pagamento, arrecadação, recompensa, repasse e devolução. Uma tentativa recusada não pode gerar receita; uma confirmação repetida não pode duplicar crédito; operações concorrentes não podem reutilizar o mesmo saldo.
