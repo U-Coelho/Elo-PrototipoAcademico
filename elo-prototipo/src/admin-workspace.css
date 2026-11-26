@@ -61,7 +61,6 @@
 @media(max-width:1000px){.admin-panel-heading{flex-wrap:wrap}.admin-filter{max-width:420px}.admin-record{padding:20px;gap:18px}.admin-message{max-width:94%}}
 @media(max-width:600px){.admin-panel-heading{flex-direction:column;gap:17px}.admin-filter{width:100%;min-width:0;max-width:none}.admin-record{flex-direction:column;padding:18px;gap:17px}.admin-record-side{width:100%;max-width:none;align-items:center;justify-content:space-between;flex-direction:row;flex-wrap:wrap;gap:12px}.admin-record-side .btn{min-width:0}.admin-conversation-heading{flex-direction:column;gap:12px}.admin-conversation-heading .text-button{align-self:flex-start}.admin-conversation{padding:13px;max-height:480px}.admin-message{max-width:100%;padding:13px}.admin-message header{gap:5px}.admin-message-send{align-items:flex-start;flex-direction:column;gap:12px}.admin-message-send .btn{width:100%}.admin-tabs>[role=tab]{padding:12px 13px}.admin-audit-table th,.admin-audit-table td{padding:14px}}
 
-/* Administration stays practical: rows, clear columns and restrained status. */
 .admin-tabs{margin-bottom:30px;gap:10px}
 .admin-tabs>[role=tab]{font-size:.8125rem;min-height:49px;padding:13px 12px}
 .admin-tabs>[role=tab]:first-child{padding-left:0;padding-right:14px}
