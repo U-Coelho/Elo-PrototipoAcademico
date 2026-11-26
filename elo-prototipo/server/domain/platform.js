@@ -6,7 +6,7 @@ import {prepareRewardDelivery,acknowledgeRewardDelivery as acknowledgeDelivery,v
 export { actors, categories } from './catalog.js';
 
 /**
- * Regras de domínio executadas pela API do protótipo acadêmico.
+ * Regras de domínio executadas pela API do protótipo.
  * O chamador deve selecionar o ator da sessão no servidor e executar cada
  * mutação dentro de uma transação do repositório PostgreSQL. Este módulo puro
  * não fornece autenticação, conexão bancária ou persistência concorrente sozinho.
@@ -52,7 +52,6 @@ const resourceAccounts = (state,resourceId) => {
 };
 const auditAccounts = (state,event) => [...new Set([event.actorId,...(event.relatedAccountIds || []),...resourceAccounts(state,event.resourceId)].filter(Boolean))];
 
-// Only the fictitious catalog accounts have an initial public location.
 const initialLocation = creatorId => {
   const label = campaignCatalog.find(c => c.creatorId === creatorId)?.location;
   if (!label) return null;
@@ -74,8 +73,6 @@ const legacySeedStories = {
   c6: 'O futuro pedala é um cenário demonstrativo de uma oficina comunitária para recuperação de bicicletas. A proposta une mobilidade, aprendizado e reaproveitamento de materiais.\n\nOs apoios representam compra de ferramentas, peças e realização de encontros de manutenção. Um plano mensal mantém as atividades ao longo do tempo.\n\nNenhuma bicicleta, pessoa ou contribuição apresentada corresponde a uma operação real.',
 };
 
-/** Add new presentation data to old workspaces without inventing reward receipts
- * or changing historical balances. Existing invalid fields are not repaired. */
 function upgradeState(input) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) return input;
   const state = clone(input);
@@ -148,7 +145,6 @@ function isValidState(value) {
   if (!Number.isSafeInteger(value.sequence) || value.sequence < 0) return false;
   for (const key of ['campaigns', 'contributions', 'ledger', 'payouts', 'auditLog', 'savedCampaignIds', 'creatorProfiles', 'projectUpdates', 'projectComments', 'accountModerations', 'directMessages','rewardDeliveries']) {
     if (!Array.isArray(value[key])) return false;
-    // Older writers could persist a final entry past the admission limit.
     if (key!=='ledger' && key!=='auditLog' && value[key].length>10000) return false;
   }
   if (!value.idempotency || typeof value.idempotency !== 'object' || Array.isArray(value.idempotency)) return false;
@@ -213,8 +209,6 @@ function isValidState(value) {
   return validFinancialLinks(value, account, date);
 }
 
-// The two seed receipts were funded by the opening balance. Their original
-// supporter debits exist, but creating matching historical credits would inflate it.
 const openingReceipts = new Map([['support-1',['SIM-001','c1',7500]],['support-2',['SIM-002','c4',3500]]]);
 const settlementCounts=['refundedCents','refundCount','canceledPendingCount','canceledSubscriptionsCount'];
 function validSettlements(state) {
@@ -297,8 +291,6 @@ function validFinancialLinks(state, account, date) {
 
 export function assertValidState(state, existingHistory = {}) {
   if (!isValidState(state)) fail('INVALID_STATE','O cenário persistido é inválido. Nenhum dado foi alterado.');
-  // Maintenance may append exactly one validated event per purged project even
-  // when user operations reached their quota. Existing audit is never trimmed.
   const cleanups=state.auditLog.filter(e=>e.action==='campaign.content_purged').length;
   const newCleanups=Math.max(0,cleanups-(existingHistory.cleanupEvents||0));
   for (const name of ['ledger','auditLog']) if (state[name].length>Math.max(10000,existingHistory[name] ?? 0)+(name==='auditLog'?newCleanups:0))
@@ -641,8 +633,6 @@ export function createPlatform({ storage = null, initialState, clock = Date.now 
       if (deleted===false && actor().role!=='admin' && project.deletedAt && project.deletedBy!==state.actorId) fail('FORBIDDEN','Somente a administração pode recuperar um projeto removido pela moderação.');
       if (typeof deleted!=='boolean') fail('INVALID_MODERATION','Informe se o projeto deve ser excluído ou restaurado.');
       const explanation=moderationReason(reason);
-      // Legacy administrator clients had no key. New commands bind the decision
-      // and its settlement to the key even if it was already in effect.
       const key=idempotencyKey===undefined && actor().role==='admin' ? null
         : useKey('moderate-campaign',idempotencyKey,{campaignId,deleted,reason:explanation});
       if (key?.previous) return {...clone(project),...(deleted?{deletionSummary:clone(key.previous.deletionSummary)}:{}),duplicate:true};
@@ -676,8 +666,6 @@ export function createPlatform({ storage = null, initialState, clock = Date.now 
         project.rewardRaisedCents-=rewardCents;
         project.backers-=confirmed.length;
         const deletionSummary={batchId,refundedCents:preview.requiredCents,refundCount:confirmed.length,canceledPendingCount:pending.length,canceledSubscriptionsCount:subscriptions.length};
-        // Settling a legacy moderation cannot turn it into a creator deletion
-        // and grant the owner permission to undo the administrative decision.
         const moderation=project.deletedAt&&account(project.deletedBy).role==='admin'
           ? {deletedBy:project.deletedBy,deletionReason:project.deletionReason}
           : {deletedBy:state.actorId,deletionReason:explanation};
@@ -712,8 +700,6 @@ export function createPlatform({ storage = null, initialState, clock = Date.now 
       record('reward.received',delivery.id,'Recebimento da recompensa confirmado pelo apoiador.',[support.creatorId,support.supporterId],{contributionId:support.id,campaignId:project.id});
       save();return clone(delivery);
     },
-    // Internal maintenance only: never exposed as an HTTP command. Financial
-    // parent rows remain as minimal references for receipts, refunds and audit.
     purgeExpiredProjects() {
       const due=state.campaigns.filter(p=>p.deletedAt&&p.purgeAfter&&!p.purgedAt&&Date.parse(p.purgeAfter)<=currentTime()
         && !state.contributions.some(c=>c.campaignId===p.id&&(c.status==='pending'||c.subscriptionStatus==='active'||(c.status==='confirmed'&&c.refundStatus!=='completed'))));
