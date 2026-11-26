@@ -2,7 +2,7 @@ import {formatProfileLocation} from './profile-location.js';
 
 export const normalizeSearch = value => String(value ?? '').normalize('NFD').replace(/\p{M}/gu,'').toLocaleLowerCase('pt-BR').trim();
 
-/** Search only the public creator information already authorized by the API. */
+
 export function searchCreators({campaigns=[],creatorProfiles=[],accounts=[],query='',includeBanned=false}={}) {
   const creators=new Map(), accountMap=new Map(accounts.map(a=>[a.id,a]));
   for(const account of accounts) if(account.role==='creator') creators.set(account.id,{id:account.id,name:account.name});
