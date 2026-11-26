@@ -1,4 +1,3 @@
-/** Personal portability view. Receives an already authorized public snapshot. */
 export function buildPersonalExport(state, exportedAt = new Date().toISOString()) {
   const actor = state.actor;
   const own = (items, field) => (items || []).filter(item => item[field] === actor.id);
