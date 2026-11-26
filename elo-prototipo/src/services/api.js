@@ -1,5 +1,5 @@
 import {buildPersonalExport} from '../domain/personal-export.js';
-/** Browser adapter. The API owns permissions, balances and persistence. */
+
 export async function createApiPlatform({ fetcher = globalThis.fetch.bind(globalThis) } = {}) {
   let state, csrfToken;
   let queue = Promise.resolve();
