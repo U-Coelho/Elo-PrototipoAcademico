@@ -2,7 +2,6 @@
 @media(max-width:760px){.revenue-controls{gap:18px;flex-wrap:wrap}.revenue-project-control{max-width:none;flex-basis:100%}.revenue-period-control{min-width:0;flex:1}.revenue-heading{align-items:flex-start}.revenue-heading h2{font-size:1.15rem}.revenue-refresh{font-size:.8rem}.revenue-summary strong{font-size:1.75rem}.revenue-summary>p{font-size:.8rem}.revenue-summary>p>span{font-size:.75rem}}
 @media(max-width:400px){.revenue-heading{flex-direction:column;gap:2px}.revenue-heading .text-button{align-self:flex-start}.revenue-controls{margin-top:15px}.revenue-summary{align-items:flex-start;flex-direction:column;gap:13px}.revenue-summary>p{text-align:left}.revenue-summary>p>span{display:inline;margin-left:8px}.revenue-period-control .segmented button{font-size:.8rem;padding:8px 10px}.revenue-note{font-size:.8125rem}}
 
-/* The chart remains the primary financial view; secondary values stay quiet. */
 .revenue-heading h2{font-size:1.125rem;font-weight:600}
 .revenue-heading>div>p{font-size:.8125rem}
 .revenue-controls{gap:24px;margin-top:24px}
