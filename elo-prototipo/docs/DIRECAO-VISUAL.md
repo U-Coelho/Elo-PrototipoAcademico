@@ -1,6 +1,6 @@
 # Direção visual para o Elo
 
-Design aplicado em 24/11/2026, após aprovação da proposta. O Elo agora usa um catálogo editorial: cartões abertos, imagens com proporção consistente, destaque compacto e navegação neutra. A composição foi aplicada ao catálogo e às telas internas, mantendo os temas claro/noturno e os fluxos existentes.
+O Elo agora usa um catálogo editorial: cartões abertos, imagens com proporção consistente, destaque compacto e navegação neutra. A composição foi aplicada ao catálogo e às telas internas, mantendo os temas claro/noturno e os fluxos existentes.
 
 ## Base e hierarquia
 
