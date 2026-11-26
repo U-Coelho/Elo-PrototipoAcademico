@@ -1,5 +1,3 @@
-/** PostgreSQL/WASM for local QA without Docker. One connection, serialized here.
- * This adapter does NOT validate PostgreSQL's behavior across real connections. */
 export async function createEmbeddedPool(dataDir='memory://') {
   const {PGlite} = await import('@electric-sql/pglite');
   const db = await PGlite.create(dataDir);
