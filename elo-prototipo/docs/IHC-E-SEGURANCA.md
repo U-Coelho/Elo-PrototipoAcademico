@@ -184,3 +184,13 @@ Em 23/11/2026, o build Docker foi concluído, aplicação e banco apresentaram e
 As capas passam a aceitar imagens próprias do criador com normalização no servidor. A localização pública opcional é editada no perfil e propagada aos projetos. A prévia de exclusão informa a devolução integral e bloqueia a operação sem saldo suficiente; o histórico apresenta devoluções e cancelamentos sem apagar comprovantes.
 
 A interface foi conferida nos temas claro/noturno e em 320 CSS px, incluindo foco no menu móvel e formulários. A proposta de evolução visual, com paleta e referências, está em [DIRECAO-VISUAL.md](DIRECAO-VISUAL.md). Correções e limites de segurança estão em [REVISAO-PROJETOS-E-SEGURANCA.md](REVISAO-PROJETOS-E-SEGURANCA.md).
+
+Fontes essenciais
+
+As referências foram concentradas em cinco fontes. As descrições da implementação e dos resultados de testes são registros do próprio projeto.
+
+- **Nielsen Norman Group — Heurísticas de usabilidade:** princípios utilizados na organização e na avaliação da interface. [Consultar](https://www.nngroup.com/articles/ten-usability-heuristics/).
+- **W3C — WCAG 2.2:** critérios de contraste, navegação por teclado, foco, formulários e adaptação de layout. [Consultar](https://www.w3.org/TR/WCAG22/).
+- **OWASP — Cheat Sheet Series:** orientações de armazenamento de senhas, autenticação, autorização, uploads e logs. [Consultar](https://cheatsheetseries.owasp.org/).
+- **PCI Security Standards Council — CVV:** restrição ao armazenamento do código de verificação após autorização, relevante para uma futura integração de pagamentos reais. [Consultar](https://www.pcisecuritystandards.org/faqs/are-merchants-allowed-to-request-card-verification-codes-values-from-cardholders/).
+- **LGPD — Lei nº 13.709/2018:** base para a discussão de finalidade, tratamento, retenção e direitos sobre dados pessoais. [Consultar](https://www2.camara.leg.br/legin/fed/lei/2018/lei-13709-14-agosto-2018-787077-normaatualizada-pl.html).
