@@ -1,6 +1,6 @@
 # Verificação da entrega final
 
-Data: 25/11/2026. Este registro substitui os resultados anteriores de 24/11. Refere-se à revisão com metas adicionais, entregas privadas, reembolso e retenção de conteúdo, além das correções de modal, permissão de criação e normalização de URLs.
+Refere-se à revisão com metas adicionais, entregas privadas, reembolso e retenção de conteúdo, além das correções de modal, permissão de criação e normalização de URLs.
 
 ## Resultados
 
@@ -30,8 +30,6 @@ A suíte padrão usa PGlite para persistência SQL e integração HTTP. Seu adap
 ## Conferência interativa e documentação
 
 Na rodada anterior de 25/11, uma cópia isolada da aplicação exercitou criação e edição de metas, envio e recebimento de recompensa, pagamento recusado, exclusão com devolução e recuperação sem reativar o pagamento. Os temas claro/noturno e formulários em 390 CSS px foram observados, sem rolagem horizontal da página. Conferências anteriores também cobriram 320 CSS px e navegação por teclado. O uso de contas e projetos reais do usuário permaneceu restrito à consulta.
-
-O PDF acadêmico final possui 22 páginas A4, sumário e marcadores, três diagramas vetoriais e cinco exemplos de conascência. Todas as páginas foram renderizadas e inspecionadas; a conferência de limites não identificou texto fora da área prevista. Conteúdo e contagens foram comparados com os registros dos testes e com os requisitos fotografados do enunciado.
 
 Na conferência final do navegador, outra cópia isolada usou os títulos literais `<style media=all /` e `Arte & cultura`. Os dois apareceram corretamente no subtítulo da entrega; não houve criação de elemento style, escape duplo ou perda do formulário e do botão de fechar. A cópia e o servidor temporários foram encerrados.
 
