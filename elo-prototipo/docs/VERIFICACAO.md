@@ -27,18 +27,8 @@ A suíte padrão usa PGlite para persistência SQL e integração HTTP. Seu adap
 8. Modal com fragmento HTML incompleto, ampersand sem escape duplo, criação administrativa proibida e limites de URL após normalização Unicode.
 9. Relatório por projeto/calendário de São Paulo, devoluções separadas e histórico de campanhas removidas.
 
-## Conferência interativa e documentação
-
-Na rodada anterior de 25/11, uma cópia isolada da aplicação exercitou criação e edição de metas, envio e recebimento de recompensa, pagamento recusado, exclusão com devolução e recuperação sem reativar o pagamento. Os temas claro/noturno e formulários em 390 CSS px foram observados, sem rolagem horizontal da página. Conferências anteriores também cobriram 320 CSS px e navegação por teclado. O uso de contas e projetos reais do usuário permaneceu restrito à consulta.
-
-Na conferência final do navegador, outra cópia isolada usou os títulos literais `<style media=all /` e `Arte & cultura`. Os dois apareceram corretamente no subtítulo da entrega; não houve criação de elemento style, escape duplo ou perda do formulário e do botão de fechar. A cópia e o servidor temporários foram encerrados.
-
-Inspeção visual e testes automatizados não equivalem a conformidade WCAG integral, estudo com participantes, teste de invasão ou validação de pagamento real. A rodada de verificação é uma evidência delimitada da versão entregue.
-
 ## Preservação e compartilhamento
 
 Backup privado salvo antes da atualização final, sem dados de sessões. Configuração privada e volume PostgreSQL foram preservados; nenhuma migração já aplicada foi modificada nesta revisão. Apenas a aplicação foi reconstruída. Login e permissões existentes foram conferidos sem editar projetos ou perfis.
-
-O ZIP final contém código, README, guia Windows, documentação e figuras. A auditoria de conteúdo rejeita .env, credencial administrativa, .local, banco, dumps, backups e segredos locais. Esses dados não acompanham a instalação de quem recebe o projeto.
 
 Correções e limites: REVISAO-FINAL.md. Arquitetura e matriz do enunciado: ARQUITETURA.md.
