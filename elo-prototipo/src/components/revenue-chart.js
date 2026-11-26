@@ -21,10 +21,6 @@ function tableMarkup(points) {
   return `<details class="revenue-chart__data"><summary>Consultar valores por dia</summary><div class="revenue-chart__table-wrap" tabindex="0" role="region" aria-label="Valores diários da arrecadação"><table><caption class="sr-only">Arrecadação confirmada por dia no período selecionado</caption><thead><tr><th scope="col">Dia</th><th scope="col">Pagamentos</th><th scope="col">Arrecadação</th></tr></thead><tbody>${points.map(point => `<tr data-chart-table-index="${point.index}"><th scope="row">${escapeHtml(fullDate(point.date))}</th><td>${point.count}</td><td>${escapeHtml(currency(point.amountCents))}</td></tr>`).join('')}</tbody></table></div></details>`;
 }
 
-/** Presentation-only component. The report is built from confirmed API records.
- * Amounts remain integer cents; connecting segments are straight to avoid
- * suggesting intermediate peaks. No initial catalog amounts are generated here.
- */
 export function renderRevenueChart(report, { id = 'revenue-chart' } = {}) {
   const name = identifier(id);
   const points = (report?.points || []).map((point, index) => ({
