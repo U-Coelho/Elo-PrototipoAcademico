@@ -10,7 +10,6 @@ function invalid() {
   throw error;
 }
 
-/** Values are cumulative funding targets, rather than additional receipts. */
 export function normalizeMilestones(value = [], goalCents) {
   if (!Array.isArray(value) || value.length > 10) invalid();
   const amounts = new Set();
@@ -29,7 +28,6 @@ export function normalizeMilestones(value = [], goalCents) {
   return milestones.sort((first, second) => first.amountCents - second.amountCents);
 }
 
-/** Persisted milestones must already be normalized; this check never repairs state. */
 export function validMilestones(value, goalCents) {
   if (!Array.isArray(value)) return false;
   try {
