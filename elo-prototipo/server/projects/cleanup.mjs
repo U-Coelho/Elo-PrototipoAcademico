@@ -1,6 +1,5 @@
 import {createPlatform} from '../domain/platform.js';
 
-/** A workspace transaction serializes cleanup with refunds and recovery. */
 export function createProjectCleanup({pool,repository,clock=Date.now,logger=console}) {
   let running=null,timer=null;
   async function clean(){
