@@ -27,9 +27,6 @@ function safeExternalLink(link) {
   } catch { return null; }
 }
 
-/** A reward receipt is part of raisedCents, never an additional amount.
- * When funding exceeds the goal, retain the composition within a full bar.
- */
 export function renderFundingProgress(campaign, { compact = false } = {}) {
   const total = integer(campaign?.raisedCents);
   const goal = integer(campaign?.goalCents);
