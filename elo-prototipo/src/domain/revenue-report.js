@@ -1,7 +1,3 @@
-/** Read-only presentation of confirmed receipts returned by the API.
- * Never derives a history from a campaign total, opening balance or payout.
- * Authorization and financial writes remain responsibilities of the backend.
- */
 export function buildRevenueReport({
   ledger = [], contributions = [], campaigns = [], creatorId,
   campaignId = null, days = 7, now = new Date(), timeZone = 'America/Sao_Paulo',
