@@ -1,12 +1,14 @@
-# Elo — decisões de IHC, acessibilidade e segurança
+Elo — decisões de IHC, acessibilidade e segurança
 
 Registro de pesquisa e evolução. A implementação vigente e seus limites são descritos na documentação arquitetural revisada em 25/11/2026, em [ARQUITETURA.md](ARQUITETURA.md), e na [revisão final](REVISAO-FINAL.md).
+
+Pesquisa e diretrizes para o protótipo acadêmico. Consulta inicial em **20 de novembro de 2026**, com revisão visual em **23 de novembro de 2026**. As decisões descritas são critérios de projeto; não constituem certificação de acessibilidade, auditoria de segurança ou comprovação de testes com usuários.
 
 ## 1. Contexto e segurança das contas — 24/11/2026
 
 A versão atual recebe cadastro com usuário, e-mail, senha e papel de criador ou apoiador. O catálogo inicial e as operações financeiras continuam fictícios. O cadastro não aceita administrador. A conta administrativa fixa é criada por ferramenta local com senha aleatória, sem credencial pública no código ou no ZIP.
 
-As senhas são armazenadas usando scrypt N=2^17/r=8/p=1, salt aleatório de 16 bytes e comparação resistente a diferenças de tempo. Parâmetros alinhados à [OWASP — Password Storage](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) e à API [Node.js crypto.scrypt](https://nodejs.org/api/crypto.html#cryptoscryptpassword-salt-keylen-options-callback). O token opaco de sessão é aleatório, guardado como hash no PostgreSQL e enviado em cookie HttpOnly/SameSite=Strict. Login rotaciona a sessão; logout a revoga. Há proteção CSRF/origem e limitação de tentativas. A implantação local permanece em loopback; uma publicação externa exige HTTPS e COOKIE_SECURE=true.
+As senhas são armazenadas usando scrypt N=2^17/r=8/p=1, salt aleatório de 16 bytes e comparação resistente a diferenças de tempo. A configuração adotada segue as orientações de armazenamento de senhas da OWASP. O token opaco de sessão é aleatório, guardado como hash no PostgreSQL e enviado em cookie HttpOnly/SameSite=Strict. Login rotaciona a sessão; logout a revoga. Há proteção CSRF/origem e limitação de tentativas. A implantação local permanece em loopback; uma publicação externa exige HTTPS e COOKIE_SECURE=true.
 
 E-mail de contato é privado para o próprio usuário e a administração. A interface pública apresenta usuário, papel e conteúdos publicados. E-mail ainda não é verificado; recuperação de senha por e-mail e MFA não foram implementados. Senhas, tokens e arquivos de acesso administrativo devem permanecer fora do repositório, do pacote e dos logs. O modelo legado de personas livres permanece somente nos testes, sem troca de identidade pela API em execução.
 
@@ -14,7 +16,7 @@ A tela de cadastro apresenta somente os campos necessários, rótulos visíveis 
 
 ## 2. Sete heurísticas aplicadas à interface
 
-As heurísticas de Nielsen são princípios de inspeção de usabilidade, e não uma certificação. A aplicação ao projeto é uma decisão de design baseada nas referências abaixo.
+As heurísticas de Nielsen são princípios de inspeção de usabilidade, e não uma certificação. A aplicação ao projeto é uma decisão de design baseada nas fontes essenciais reunidas ao final deste documento.
 
 | Princípio | Decisão para o Elo | Evidência a verificar |
 | --- | --- | --- |
@@ -26,7 +28,7 @@ As heurísticas de Nielsen são princípios de inspeção de usabilidade, e não
 | Reconhecimento em vez de memorização | Exibir rótulos e resumo de campanha, valor e modalidade; apresentar navegação com nomes visíveis. | A pessoa não precisa lembrar informações de uma tela anterior para concluir o apoio. |
 | Estética e design minimalista | Priorizar conteúdo decisório, espaçamento, agrupamento e uma ação principal por contexto. | Elementos decorativos e detalhes secundários não competem com o objetivo da tela. |
 
-Fontes: [NN/G — 10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/) e [NN/G — Aesthetic and Minimalist Design](https://www.nngroup.com/articles/aesthetic-minimalist-design/). O minimalismo deve preservar informações necessárias à decisão; retirar rótulos ou esconder custos pode prejudicar a experiência.
+O minimalismo deve preservar informações necessárias à decisão; retirar rótulos ou esconder custos pode prejudicar a experiência.
 
 ## 3. Direção visual e temas
 
@@ -44,9 +46,9 @@ A revisão de 23/11 adota uma direção utilitária/editorial: superfícies neut
 | Texto secundário | `#62646C` | `#B4B5BD` |
 | Destaque azul acinzentado | `#44536B` | `#BAC8DF` |
 
-A paleta é uma escolha própria para o Elo. O uso de cinzas em camadas e de cor com função específica se apoia no [Carbon Design System — Color](https://www.carbondesignsystem.com/building-blocks/foundations/color/overview). O [relato do Discord sobre contraste e saturação](https://discord.com/blog/refining-discords-mobile-experience-with-your-feedback) também reforça a importância de considerar preferências diferentes, em vez de presumir que um único tema escuro atende a todos. Os estados continuam acompanhados de texto/ícone, com verde para confirmação, âmbar para pendência e vermelho para recusa.
+A paleta é uma escolha própria para o Elo, com cinzas em camadas e cores reservadas a funções específicas. Os dois temas atendem a preferências diferentes de apresentação. Os estados continuam acompanhados de texto/ícone, com verde para confirmação, âmbar para pendência e vermelho para recusa.
 
-Foram calculados 14 pares de tokens em cada tema. Todos os pares textuais examinados superaram 4,5:1; as bordas necessárias dos campos superaram 3:1. A medição de tokens cobre essas combinações, não substitui uma auditoria de todos os estados e componentes renderizados. Referência: [W3C — Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).
+Foram calculados 14 pares de tokens em cada tema. Todos os pares textuais examinados superaram 4,5:1; as bordas necessárias dos campos superaram 3:1. A medição de tokens cobre essas combinações, não substitui uma auditoria de todos os estados e componentes renderizados.
 
 - Preferência explícita entre modo claro e modo escuro, com rótulo acessível e escolha preservada.
 - Possibilidade de usar a preferência do sistema como valor inicial, sem substituir uma escolha explícita do visitante.
@@ -54,7 +56,7 @@ Foram calculados 14 pares de tokens em cada tema. Todos os pares textuais examin
 - Avaliação separada de texto, links, botões, campos, mensagens e foco em cada tema.
 - Uso moderado de movimento e ausência de animações que dificultem a conclusão de uma tarefa.
 
-Modo escuro não garante menor fadiga ou melhor acessibilidade para todas as pessoas. Ele é uma preferência de apresentação que também precisa cumprir critérios de legibilidade. A capacidade de detectar preferência de esquema de cor é descrita em [W3C — Media Queries, `prefers-color-scheme`](https://www.w3.org/TR/mediaqueries-5/#prefers-color-scheme); a especificação consultada é um documento em evolução.
+Modo escuro não garante menor fadiga ou melhor acessibilidade para todas as pessoas. Ele é uma preferência de apresentação que também precisa cumprir critérios de legibilidade. A preferência do sistema pode ser detectada com `prefers-color-scheme`.
 
 ### Arrecadação no período
 
@@ -76,9 +78,7 @@ O gráfico fornece instruções de teclado, leitura do dia selecionado e a alter
 | Reflow | WCAG 1.4.10, AA: conteúdo vertical utilizável na largura equivalente a **320 CSS px**, ressalvadas exceções que exigem layout bidimensional. | Não cortar botões, formulários ou informações essenciais nas telas estreitas. |
 | Prevenção de erro financeiro | WCAG 3.3.4, AA: ao menos reversibilidade, verificação com correção ou revisão/confirmação em submissões abrangidas pelo critério. | Apresentar resumo revisável antes do apoio simulado. |
 
-Referências diretas: [Contraste de texto](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html), [Contraste não textual](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html), [Uso de cor](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html), [Foco visível](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html), [Foco não oculto](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html), [Tamanho mínimo de alvo](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html), [Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html) e [Prevenção de erros](https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html).
-
-Em diálogos modais, mover o foco para dentro, manter a sequência de Tab/Shift+Tab no diálogo, permitir Escape e devolver o foco ao acionador quando apropriado. Ver [WAI — Dialog Modal Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/).
+Em diálogos modais, mover o foco para dentro, manter a sequência de Tab/Shift+Tab no diálogo, permitir Escape e devolver o foco ao acionador quando apropriado.
 
 Esses critérios são uma seleção útil para o projeto. Atendê-los isoladamente não comprova conformidade integral com WCAG 2.2.
 
@@ -132,27 +132,25 @@ O visitante pode modificar JavaScript e informações visuais no próprio navega
 
 A execução exige autenticação e não permite trocar de persona pela API; a seleção de personagens permanece somente no adaptador legado dos testes. Banimento e suspensão são aplicados à conta resolvida pela sessão. Acesso ao runtime, ao segredo de sessão ou ao banco pertence à administração do ambiente. Pagamentos permanecem simulados e o ambiente acadêmico deve ser exercitado com dados fictícios, sem ser apresentado como aplicação financeira de produção.
 
-Fotos são validadas pelo conteúdo e regravadas com sharp, com limite de pixels e rejeição de animação; o nome e a extensão enviados não são tratados como prova do tipo. A leitura usa uma URL interna gerada pelo servidor, exige sessão autorizada e responde como JPEG com cache privado. A gravação verifica novamente a punição dentro da transação e registra o evento sem guardar a imagem no log. Referências de implementação: [sharp — construtor e limites](https://sharp.pixelplumbing.com/api-constructor/), [sharp — metadados](https://sharp.pixelplumbing.com/api-input/) e [OWASP — File Upload](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html).
+Fotos são validadas pelo conteúdo e regravadas com sharp, com limite de pixels e rejeição de animação; o nome e a extensão enviados não são tratados como prova do tipo. A leitura usa uma URL interna gerada pelo servidor, exige sessão autorizada e responde como JPEG com cache privado. A gravação verifica novamente a punição dentro da transação e registra o evento sem guardar a imagem no log.
 
 A migração `004_timed_account_moderation.sql` introduz o tipo de punição e a data opcional de término, convertendo o banimento booleano legado sem remover registros financeiros. Datas e estados recebidos do navegador são validados; é o relógio do servidor que determina se a restrição ainda se aplica.
 
 O repositório `server/repository/postgres.js` persiste tabelas por entidade e substitui o pequeno agregado de um workspace dentro da transação. Esse desenho facilita a demonstração, mas regrava mais registros que uma atualização incremental. O bloqueio por workspace privilegia simplicidade e consistência do cenário; uma versão de grande escala exigiria outra granularidade de concorrência.
 
-O Compose prevê uma aplicação e um banco, sem réplicas ou alta disponibilidade. Volume persistente conserva dados entre recriações de containers e tem finalidade diferente de backup. Um dump foi criado antes da atualização de 23/11/2026; a restauração ainda precisa ser verificada. Referências: [Docker Compose](https://docs.docker.com/compose/intro/compose-application-model/), [Docker — Volumes](https://docs.docker.com/engine/storage/volumes/) e [PostgreSQL — Transações](https://www.postgresql.org/docs/current/tutorial-transactions.html).
-
-Fontes: [OWASP — Autorização por objeto](https://api-security.owasp.org/editions/2023/en/0xa1-broken-object-level-authorization/), [OWASP — Integração com pagamentos](https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Payment_Gateway_Integration_Cheat_Sheet.html), [OWASP — Autorização de transações](https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html), [Stripe — Webhooks](https://docs.stripe.com/webhooks) e [OWASP — Logging](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html).
+O Compose prevê uma aplicação e um banco, sem réplicas ou alta disponibilidade. Volume persistente conserva dados entre recriações de containers e tem finalidade diferente de backup. Um dump foi criado antes da atualização de 23/11/2026; a restauração ainda precisa ser verificada.
 
 ## 7. Dados, pagamentos e privacidade em uma evolução real
 
-Para reduzir exposição, uma integração real pode utilizar checkout hospedado ou componentes que transmitam os dados de cartão diretamente ao provedor. O modelo de integração afeta o escopo de controles PCI. **CVV não pode ser armazenado após autorização, mesmo criptografado.** Terceirizar o processamento não elimina as responsabilidades remanescentes da plataforma. Fontes: [Stripe — Integration Security Guide](https://docs.stripe.com/security/guide), [PCI — CVV](https://www.pcisecuritystandards.org/faqs/are-merchants-allowed-to-request-card-verification-codes-values-from-cardholders/) e [PCI — Terceirização](https://www.pcisecuritystandards.org/faqs/1092/).
+Para reduzir exposição, uma integração real pode utilizar checkout hospedado ou componentes que transmitam os dados de cartão diretamente ao provedor. O modelo de integração afeta o escopo de controles PCI. **CVV não pode ser armazenado após autorização, mesmo criptografado.** Terceirizar o processamento não elimina as responsabilidades remanescentes da plataforma.
 
-Se houver senhas próprias, utilizar biblioteca adequada de hash de senhas e configuração atualizada, preferencialmente Argon2id onde disponível. Prever recuperação segura de conta, limites de tentativas e autenticação reforçada para administração e alteração de dados de recebimento. Fontes: [OWASP — Password Storage](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) e [OWASP — Authentication](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html).
+Se houver senhas próprias, utilizar biblioteca adequada de hash de senhas e configuração atualizada, preferencialmente Argon2id onde disponível. Prever recuperação segura de conta, limites de tentativas e autenticação reforçada para administração e alteração de dados de recebimento.
 
-Dados financeiros são críticos, mas não se tornam automaticamente “dados pessoais sensíveis” no sentido legal. A definição da LGPD inclui, entre outros, saúde, religião e biometria. Conforme a campanha, informações de apoio podem revelar aspectos sensíveis: esse é um risco contextual que deve ser analisado. Coleta, finalidade, base legal, compartilhamentos, retenção e direitos dos titulares precisam ser definidos. Consentimento é uma das bases legais possíveis, e conservação legal de registros deve ser considerada ao atender pedidos de exclusão. Referência: [LGPD, arts. 5º, 6º, 7º, 11, 16 e 18](https://www2.camara.leg.br/legin/fed/lei/2018/lei-13709-14-agosto-2018-787077-normaatualizada-pl.html).
+Dados financeiros são críticos, mas não se tornam automaticamente “dados pessoais sensíveis” no sentido legal. A definição da LGPD inclui, entre outros, saúde, religião e biometria. Conforme a campanha, informações de apoio podem revelar aspectos sensíveis: esse é um risco contextual que deve ser analisado. Coleta, finalidade, base legal, compartilhamentos, retenção e direitos dos titulares precisam ser definidos. Consentimento é uma das bases legais possíveis, e conservação legal de registros deve ser considerada ao atender pedidos de exclusão.
 
-Campanhas públicas e documentos privados devem ter tratamentos diferentes. Uma versão com upload precisa validar tipo, conteúdo e tamanho e restringir acesso a documentos privados. Fraude e abuso automatizado exigem controles do fluxo de negócio, além de proteção técnica das contas. Fontes: [OWASP — File Upload](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html) e [OWASP API6 — Sensitive Business Flows](https://api-security.owasp.org/editions/2023/en/0xa6-unrestricted-access-to-sensitive-business-flows/).
+Campanhas públicas e documentos privados devem ter tratamentos diferentes. Uma versão com upload precisa validar tipo, conteúdo e tamanho e restringir acesso a documentos privados. Fraude e abuso automatizado exigem controles do fluxo de negócio, além de proteção técnica das contas.
 
-Uma operação real também precisa de procedimento de resposta a incidentes para conter danos, registrar avaliação e analisar comunicações obrigatórias. Fontes: [ANPD — Guia de segurança](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-vf.pdf/@@display-file/file) e [ANPD — Regulamento de comunicação de incidentes](https://www.gov.br/anpd/pt-br/assuntos/noticias/anpd-aprova-o-regulamento-de-comunicacao-de-incidente-de-seguranca).
+Uma operação real também precisa de procedimento de resposta a incidentes para conter danos, registrar avaliação e analisar comunicações obrigatórias.
 
 ## 8. Plano de avaliação, sem afirmar execução
 
