@@ -2,8 +2,6 @@
 
 Registro de pesquisa e evolução. A implementação vigente e seus limites são descritos na documentação arquitetural revisada em 25/11/2026, em [ARQUITETURA.md](ARQUITETURA.md), e na [revisão final](REVISAO-FINAL.md).
 
-Pesquisa e diretrizes para o protótipo acadêmico. Consulta inicial em **20 de novembro de 2026**, com revisão visual em **23 de novembro de 2026**. As decisões descritas são critérios de projeto; não constituem certificação de acessibilidade, auditoria de segurança ou comprovação de testes com usuários.
-
 ## 1. Contexto e segurança das contas — 24/11/2026
 
 A versão atual recebe cadastro com usuário, e-mail, senha e papel de criador ou apoiador. O catálogo inicial e as operações financeiras continuam fictícios. O cadastro não aceita administrador. A conta administrativa fixa é criada por ferramenta local com senha aleatória, sem credencial pública no código ou no ZIP.
