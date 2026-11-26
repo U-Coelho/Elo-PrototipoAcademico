@@ -6,7 +6,7 @@ Financiamento coletivo e processo financeiro
 
 O Elo é um protótipo de plataforma de financiamento coletivo, inspirado nas jornadas de criação e apoio de projetos. Seu problema central é registrar contribuições e manter consistência entre pagamento, arrecadação, recompensa, repasse e devolução. Uma tentativa recusada não pode gerar receita; uma confirmação repetida não pode duplicar crédito; operações concorrentes não podem reutilizar o mesmo saldo.
 
-O cenário escolhido no enunciado é uma plataforma de crowdfunding com foco no processo financeiro [R1]. O trabalho materializa uma proposta arquitetural e analisa coesão, acoplamento e conascência, relacionando as decisões aos compromissos de engenharia discutidos por Richards e Ford [R2]. A avaliação é demonstrada por código, diagramas, regras e testes, sem depender da escolha de uma tecnologia específica.
+O cenário escolhido no enunciado é uma plataforma de crowdfunding com foco no processo financeiro. O trabalho materializa uma proposta arquitetural e analisa coesão, acoplamento e conascência, relacionando as decisões aos compromissos de engenharia discutidos por Richards e Ford. A avaliação é demonstrada por código, diagramas, regras e testes, sem depender da escolha de uma tecnologia específica.
 
 ### 1.1 Participantes e limites de autorização
 
@@ -34,14 +34,14 @@ Não há gateway, cobrança mensal automática, encerramento automático por met
 
 ## 2 Requisitos e prioridades arquiteturais
 
-A prioridade é a integridade do processo financeiro, seguida de autorização, manutenção e reprodutibilidade. O enunciado solicita decisões justificadas e evidências de sua presença na solução [R1]. Assim, a arquitetura precisa explicar tanto os benefícios quanto os custos das escolhas adotadas.
+A prioridade é a integridade do processo financeiro, seguida de autorização, manutenção e reprodutibilidade. O enunciado solicita decisões justificadas e evidências de sua presença na solução. Assim, a arquitetura precisa explicar tanto os benefícios quanto os custos das escolhas adotadas.
 
 | Qualidade | Decisão que a favorece | Consequência observável |
 | --- | --- | --- |
 | Consistência | Transação, bloqueio do agregado, idempotência e validação de vínculos. | Confirmar duas vezes não duplica crédito; falhas não deixam liquidação parcial. |
 | Controle de acesso | Identidade da sessão, validação de papel e propriedade por recurso. | Ocultar um botão não é a única proteção; a API também rejeita a ação indevida. |
 | Manutenibilidade | Apresentação, comunicação, autenticação, domínio e persistência identificáveis. | É possível localizar as responsabilidades e testar regras sem navegador ou banco. |
-| Reprodutibilidade | Compose, migrações versionadas e geração local de segredos. | Outro integrante executa aplicação e banco sem receber as credenciais locais da equipe. |
+| Reprodutibilidade | Compose, migrações versionadas e geração local de segredos. | Aplicação e banco executados localmente, com credenciais próprias por instalação. |
 | Compreensão | Temas neutros, navegação consistente e revisão de operações. | Valor, estado, recompensa e efeito financeiro aparecem de forma distinguível. |
 
 Não foi assumida uma necessidade de escala distribuída. O bloqueio por workspace e a gravação do pequeno agregado foram escolhidos para facilitar consistência e demonstração. Essa decisão limita o paralelismo e deve ser revista antes de atender um volume elevado de usuários.
@@ -50,17 +50,17 @@ Não foi assumida uma necessidade de escala distribuída. O bloqueio por workspa
 
 O estilo adotado é um monólito com modularização por responsabilidades e separação em camadas. Uma aplicação Node.js concentra os casos de uso e serve a interface. O PostgreSQL é um serviço de infraestrutura separado. Os módulos de negócio não possuem implantação independente; a existência de dois containers Docker não caracteriza microsserviços.
 
-As visões abaixo usam a distinção do C4 entre unidades de execução e componentes internos [R3]. São representações adaptadas ao protótipo: um container lógico do C4 não se confunde necessariamente com um container Docker. A primeira figura explicita a implantação local; a segunda apresenta as dependências principais.
+As visões abaixo usam a distinção do C4 entre unidades de execução e componentes internos. São representações adaptadas ao protótipo: um container lógico do C4 não se confunde necessariamente com um container Docker. A primeira figura explicita a implantação local; a segunda apresenta as dependências principais.
 
 ![Visão de execução e implantação local](figuras/implantacao.svg)
 
-Figura 1 - Execução e implantação local. As setas representam HTTP, SQL e persistência no volume. Fonte: elaboração dos autores a partir de Dockerfile e compose.yaml.
+Figura 1 - Execução e implantação local. As setas representam HTTP, SQL e persistência no volume. Representação baseada em Dockerfile e compose.yaml.
 
 O navegador carrega HTML, CSS e JavaScript da aplicação. Interface e API usam a mesma origem. No Compose, o banco fica na rede interna e não publica uma porta no host. A aplicação é vinculada a loopback; a porta padrão é 3000 e pode ser configurada. A instalação usada na verificação opera em localhost:3001.
 
 ![Componentes e dependências principais](figuras/componentes.svg)
 
-Figura 2 - Componentes e dependências principais. As setas indicam uso; não representam cada consulta auxiliar. O núcleo de domínio não importa o driver pg. Fonte: elaboração dos autores a partir dos módulos do Elo.
+Figura 2 - Componentes e dependências principais. As setas indicam uso; não representam cada consulta auxiliar. O núcleo de domínio não importa o driver pg. Representação dos módulos do Elo.
 
 O ponto de composição é server/index.mjs: cria o pool, o repositório, a autenticação, a limpeza periódica e o servidor HTTP. Dependências são fornecidas por parâmetros, como createApp com repository e authentication. O domínio recebe estado e relógio, e as regras podem ser exercitadas sem conexão externa.
 
@@ -104,7 +104,7 @@ Acoplamento expressa as dependências entre partes do sistema. A estratégia é 
 | Tela para cliente HTTP | Chamadas do adaptador de API com dados de formulário. | Endpoints e CSRF ficam centralizados; a tela não conhece tabelas SQL. |
 | Navegador para servidor | HTTP, JSON, cookie e uploads autenticados. | Contrato nomeado e erros explícitos. Alterar campos ainda exige coordenar cliente, servidor e testes. |
 | HTTP para identidade e domínio | Resolução da sessão e chamadas dos casos de uso. | A identidade vem do servidor; permissões não dependem de parâmetros de papel enviados pela tela. |
-| Coordenação para repositório | read e transact; callback de domínio dentro da transação. | Detalhes do bloqueio e da gravação ficam no repositório. O núcleo não importa pg. |
+| API para repositório | read e transact; callback de domínio dentro da transação. | Detalhes do bloqueio e da gravação ficam no repositório. O núcleo não importa pg. |
 | Persistência para PostgreSQL | Driver, consultas parametrizadas, tabelas e constraints. | SQL concentrado, mas trocar de banco ainda exige adaptar esquema, consultas e testes. |
 | Limpeza para domínio e repositório | Consulta de vencimento e transação por workspace. | Rotina interna reutiliza a regra de expurgo e não fornece uma API destrutiva ao navegador. |
 
@@ -116,7 +116,7 @@ Há validações legítimas em mais de uma camada: formulário orienta o usuári
 
 ## 6 Análise de conascência
 
-Conascência identifica propriedades sobre as quais elementos precisam concordar para continuar funcionando juntos [R4]. A análise complementa o mapa de dependências, indicando o que uma alteração exige modificar. A seguir são apresentados cinco exemplos classificados, com tratamento e impacto de manutenção, acima do mínimo de três solicitado pelo enunciado.
+Conascência identifica propriedades sobre as quais elementos precisam concordar para continuar funcionando juntos. A análise complementa o mapa de dependências, indicando o que uma alteração exige modificar. A seguir são apresentados cinco exemplos classificados, com tratamento e impacto de manutenção, acima do mínimo de três solicitado pelo enunciado.
 
 ### 6.1 Conascência de nome
 
@@ -146,11 +146,11 @@ Tratamento: mantida nas chamadas JavaScript da interface e do domínio; reduzida
 
 A mutação persistida depende da ordem: BEGIN, bloqueio do workspace, leitura, validação e regra, gravação, COMMIT. Um pagamento precisa existir e estar em transição permitida antes de produzir os lançamentos. Adquirir o bloqueio depois de calcular o saldo permitiria que dois pedidos usassem a mesma disponibilidade.
 
-Tratamento: mantida dentro de uma fronteira transacional e concentrada no repositório. Falhas usam ROLLBACK; repetição usa idempotência. O PostgreSQL fornece os mecanismos de bloqueio e transação utilizados [R5]. Idempotência não é, por si só, um tipo de conascência: ela é uma estratégia para preservar o efeito único dentro desses acordos.
+Tratamento: mantida dentro de uma fronteira transacional e concentrada no repositório. Falhas usam ROLLBACK; repetição usa idempotência. O PostgreSQL fornece os mecanismos de bloqueio e transação utilizados. Idempotência não é, por si só, um tipo de conascência: ela é uma estratégia para preservar o efeito único dentro desses acordos.
 
 ### 6.6 Força, grau e localidade
 
-Nome, tipo e significado são acordos estáticos visíveis nos contratos. O acordo dinâmico de execução tem maior impacto potencial sobre a integridade financeira e deve permanecer próximo da regra que exige a sequência. Quanto mais módulos interpretam um estado, maior o grau de coordenação necessário; quanto mais espalhada a mudança, maior seu custo [R4].
+Nome, tipo e significado são acordos estáticos visíveis nos contratos. O acordo dinâmico de execução tem maior impacto potencial sobre a integridade financeira e deve permanecer próximo da regra que exige a sequência. Quanto mais módulos interpretam um estado, maior o grau de coordenação necessário; quanto mais espalhada a mudança, maior seu custo.
 
 A estratégia não promete eliminar toda conascência. Busca conservar acordos necessários, substituir convenções implícitas por contratos claros e localizar dependências fortes. Não se atribui conascência temporal somente porque existe uma data: a agenda de expurgo é uma regra de negócio; a ordem transacional é o exemplo de execução analisado aqui.
 
@@ -173,7 +173,7 @@ Os números do exemplo começam em zero. Totais ilustrativos antigos do catálog
 
 ![Fluxo de pagamento, entrega e exclusão](figuras/fluxo.svg)
 
-Figura 3 - Fluxo principal de pagamento, entrega e exclusão. É uma visão dos estados e efeitos relevantes, não de todas as transições de recorrência. Fonte: elaboração dos autores a partir das regras e dos testes.
+Figura 3 - Fluxo principal de pagamento, entrega e exclusão. Representação dos estados e efeitos previstos nas regras e nos testes, sem detalhar todas as transições de recorrência.
 
 ### 7.2 Recorrência e repasse
 
@@ -222,7 +222,7 @@ Chaves estrangeiras, unicidade e CHECKs complementam as validações do domínio
 
 ## 8 Justificativas arquiteturais e compromissos
 
-As decisões abaixo apresentam a escolha, a alternativa considerada e o custo aceito. A análise associa cada opção às necessidades do recorte, em vez de afirmar que uma tecnologia garante qualidade arquitetural por si só [R2].
+As decisões abaixo apresentam a escolha, a alternativa considerada e o custo aceito. A análise associa cada opção às necessidades do recorte, em vez de afirmar que uma tecnologia garante qualidade arquitetural por si só.
 
 | Decisão | Alternativa considerada | Justificativa e custo aceito |
 | --- | --- | --- |
@@ -235,7 +235,7 @@ As decisões abaixo apresentam a escolha, a alternativa considerada e o custo ac
 | Entrega por mensagem e link | Upload de arquivos e entrega física | Atende o protótipo sem coletar endereço ou hospedar arquivos. O destino externo não é controlado pelo Elo. |
 | Remoção em duas etapas | Apagar imediatamente ou conservar tudo | Combina recuperação por trinta dias com retirada de conteúdo vencido. Exige agenda de manutenção e separação do histórico financeiro. |
 
-Docker Compose descreve serviços, rede e volume [R6]. A escolha de uma aplicação e um banco atende à reprodução local e ao pedido de não acrescentar redundância nesta fase. Uma falha do banco interrompe o serviço; containers e volume persistente não oferecem alta disponibilidade nem substituem backup.
+Docker Compose descreve serviços, rede e volume. A escolha de uma aplicação e um banco atende à reprodução local e ao pedido de não acrescentar redundância nesta fase. Uma falha do banco interrompe o serviço; containers e volume persistente não oferecem alta disponibilidade nem substituem backup.
 
 A revisão manteve validações em fronteiras distintas, mas centralizou normalização de links e renderização de títulos onde havia interpretações repetidas. Essa escolha melhora manutenção sem introduzir uma nova camada genérica para todos os formulários ou reestruturar o núcleo na reta final.
 
@@ -243,11 +243,11 @@ A revisão manteve validações em fronteiras distintas, mas centralizou normali
 
 ### 9.1 Controles implementados
 
-O cadastro público aceita somente criador ou apoiador. Senhas de 12 a 128 caracteres usam scrypt com salt aleatório e parâmetros N=131072, r=8, p=1. Sessões opacas duram sete dias, são armazenadas por hash e podem ser revogadas. Cookie HttpOnly/SameSite Strict, rotação no login, logout, origem e CSRF protegem as operações. Armazenamento de senha e autenticação seguem responsabilidades separadas da autorização de recursos [R7].
+O cadastro público aceita somente criador ou apoiador. Senhas de 12 a 128 caracteres usam scrypt com salt aleatório e parâmetros N=131072, r=8, p=1. Sessões opacas duram sete dias, são armazenadas por hash e podem ser revogadas. Cookie HttpOnly/SameSite Strict, rotação no login, logout, origem e CSRF protegem as operações. Armazenamento de senha e autenticação seguem responsabilidades separadas da autorização de recursos.
 
 Há limites de tentativa por IP e identidade, capacidade de cadastro conferida sob bloqueio e filas limitadas de trabalho para senha e imagens. O banco recebe consultas parametrizadas. A resposta da API filtra dados por participante: e-mails ficam com titular e administração; finanças, conversas e entregas têm seus próprios limites de acesso. A exportação pessoal não inclui hashes ou sessões de terceiros.
 
-Capas aceitam JPEG, PNG ou WebP estáticos de até 5 MiB e 16 milhões de pixels. O servidor decodifica, recorta e regrava JPEG 1280 x 800, sem metadados e de até 1 MiB. Avatares aceitam até 2 MiB e usam saída 512 x 512. Não se confia apenas na extensão; SVG e animações são recusados. Limite, validação de conteúdo e autorização são preocupações também indicadas pela OWASP [R8].
+Capas aceitam JPEG, PNG ou WebP estáticos de até 5 MiB e 16 milhões de pixels. O servidor decodifica, recorta e regrava JPEG 1280 x 800, sem metadados e de até 1 MiB. Avatares aceitam até 2 MiB e usam saída 512 x 512. Não se confia apenas na extensão; SVG e animações são recusados. Limite, validação de conteúdo e autorização são preocupações também indicadas pela OWASP.
 
 Texto de usuário é escapado antes de compor HTML. O cabeçalho dos diálogos agora trata título e subtítulo como texto, em um componente único. Links públicos aceitam HTTP/HTTPS sem credenciais; entregas exigem HTTPS. Os limites de 500 e 1.000 caracteres são conferidos também depois da normalização do endereço. O servidor não busca o conteúdo dos links de entrega.
 
@@ -255,7 +255,7 @@ Texto de usuário é escapado antes de compor HTML. O cabeçalho dos diálogos a
 
 A interface usa superfícies neutras e hierarquia comum nos temas claro e noturno. Projeto e financiamento ficam próximos; a barra distingue apoio direto de recompensa com legenda textual. Operações financeiras mostram revisão, estado e referência. O gráfico oferece consulta por teclado e tabela diária, sem depender somente da cor ou do ponteiro.
 
-Meu perfil fica em Meu espaço; foto e localização são alteradas em Editar perfil. Configuração pertence ao projeto do próprio criador; punição pertence ao perfil; logs ficam no painel administrativo. Diálogos identificados, rótulos de formulário, foco em controles e feedback de erro orientam a navegação. Essas escolhas se relacionam a preocupações de teclado, foco e identificação de entradas das WCAG 2.2 [R9], sem declarar conformidade integral.
+Meu perfil fica em Meu espaço; foto e localização são alteradas em Editar perfil. Configuração pertence ao projeto do próprio criador; punição pertence ao perfil; logs ficam no painel administrativo. Diálogos identificados, rótulos de formulário, foco em controles e feedback de erro orientam a navegação. Essas escolhas se relacionam a preocupações de teclado, foco e identificação de entradas das WCAG 2.2, sem declarar conformidade integral.
 
 ### 9.3 Limites e evolução
 
@@ -285,11 +285,13 @@ A inspeção interativa anterior verificou criação e edição de metas, envio 
 
 ### 10.2 Revisão final de erros e redundâncias
 
-Dois revisores independentes examinaram backend e interface; o coordenador integrou as correções e executou os testes. Fragmentos de HTML em títulos podiam quebrar a janela de entrega: a renderização do cabeçalho foi centralizada, removendo escapes repetidos nos chamadores. A criação por comando JSON admitia administrador, em divergência com o upload: as duas formas agora exigem criador.
+O cabeçalho dos diálogos renderiza títulos como texto simples, com tratamento centralizado e sem escapes repetidos nos chamadores. A criação de projetos exige conta de criador tanto no comando JSON quanto no envio com imagem. A validação de permissões ocorre no servidor antes de qualquer alteração de estado.
 
-URLs com caracteres Unicode podiam crescer ao serem normalizadas, ultrapassar o limite persistível e causar erro interno. Os limites agora são aplicados ao endereço final, com erro de validação antes de alterar o estado. A regra da entrega é compartilhada com sua apresentação. Também foram retiradas funções sem uso, um parâmetro não utilizado e a segunda lista de verificação redundante do build.
+A normalização de URLs ocorre antes da validação dos limites persistidos. Endereços acima do limite retornam erro de validação sem alterar o estado. A regra de links das entregas é compartilhada entre domínio e apresentação.
 
-Não foram removidas proteções legítimas de autorização ou constraints SQL. Não foi feita uma refatoração estrutural do núcleo ou uma remoção indiscriminada de CSS legado. Os resultados representam a cobertura descrita, e não uma garantia de ausência de todo defeito.
+O build utiliza uma lista única de arquivos obrigatórios. Funções sem uso e parâmetros desnecessários não integram a implementação.
+
+As validações de autorização e as restrições SQL permanecem ativas. O núcleo mantém sua estrutura e os estilos preservam as regras necessárias à interface. Os testes representam a cobertura descrita, sem garantir ausência de defeitos.
 
 ### 10.3 Execução e roteiro de demonstração
 
@@ -300,7 +302,7 @@ node scripts/setup-env.mjs
 docker compose up -d --build
 ```
 
-Uma instalação nova abre em localhost:3000; se PORT for alterada para 3001, usa localhost:3001. O administrador fixo é gerado pelo procedimento privado do README; não existe senha administrativa compartilhada no pacote. O professor ou colega deve executar sua própria instalação. Um endereço localhost não é acesso remoto ao computador da equipe.
+Uma instalação nova abre em localhost:3000; se PORT for alterada para 3001, usa localhost:3001. O administrador fixo é gerado pelo procedimento privado do README; não existe senha administrativa compartilhada no pacote. A execução é local, com configuração e credenciais por instalação. Um endereço localhost não permite acesso remoto.
 
 Roteiro sugerido: cadastrar criador e apoiador; criar projeto com recompensa e metas de R$ 45 mil, R$ 70 mil e R$ 80 mil; criar apoio pendente; confirmar e observar arrecadação e extrato; disponibilizar e receber uma entrega; testar a recusa de outro apoio; excluir com reembolso; recuperar o conteúdo e verificar que o dinheiro não foi recreditado. A rotina de trinta dias é demonstrada pelos testes de relógio e persistência, sem alterar datas do banco em uso.
 
@@ -325,7 +327,3 @@ docker compose exec -T -e ELO_RUN_POSTGRES_TESTS=1 app `
 | Pelo menos três conascências | Seção 6 | Cinco exemplos classificados, tratamento e impacto de evolução. |
 | Justificativas arquiteturais | Seções 7 e 8 | Processo financeiro, alternativas e custos aceitos. |
 | Evidência e evolução | Seções 9 e 10 | Limitações, testes, revisão e roteiro observável no protótipo. |
-
-[R9] W3C. Web Content Accessibility Guidelines (WCAG) 2.2. Recomendação de 12 de dezembro de 2024. Disponível em: https://www.w3.org/TR/WCAG22/
-
-Referências online verificadas em 25 de novembro de 2026. A classificação dos exemplos, as justificativas, os diagramas e as evidências foram elaborados a partir do código e das verificações do Elo. A obra indicada fundamenta a abordagem; não são atribuídas ao livro medições ou resultados obtidos nos testes do protótipo.
